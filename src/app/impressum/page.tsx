@@ -1,3 +1,6 @@
+const PLUM = '#4A235A';
+const CORAL = '#FF6F61';
+const MINT  = '#A8E6CF';
 export const metadata = {
   title: "Impressum - X-Trans e.U",
   description: "Wir haben diese Datenschutzerklärung (Fassung 17.12.2022-112365468) verfasst, um Ihnen gemäß der Vorgaben der Datenschutz-Grundverordnung (EU) ",
@@ -994,55 +997,90 @@ export default function Impressum() {
 <p>Alle Texte sind urheberrechtlich geschützt.</p>								</div>`;
  return (
   
-    <main className="mx-auto w-full max-w-[1150px] px-4 py-8 overflow-x-hidden">
-      <h1 className="text-[#b38b59] text-3xl md:text-4xl font-semibold leading-tight tracking-tight mb-6">
-        Impressum
-      </h1>
-      {/* Верхняя полоска с контактами */}
-<div className="bg-[#b38b59] text-white py-2 my-8">
-  <div className="mx-auto w-full max-w-[1150px] px-4 py-3
-                  grid grid-cols-1 sm:grid-cols-3 gap-3">
+   
 
-    {/* Компания */}
-    <div className="flex items-center justify-center sm:justify-start gap-2">
-      {/* building */}
-      <svg className="w-6 h-6 shrink-0" viewBox="0 0 24 24" fill="none"
-     stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-  <path d="M12 3 19 7v5c0 5-3.5 9-7 9s-7-4-7-9V7l7-4z" />
-  <path d="m9 12 2 2 4-4" />
-</svg>
+<main className="mx-auto w-full max-w-[1150px] px-4 py-8 overflow-x-hidden">
+  <h1
+    className="text-3xl md:text-4xl font-semibold leading-tight tracking-tight mb-6"
+    style={{ color: PLUM }}
+  >
+    Impressum
+  </h1>
 
-      <span className="font-semibold">X-Trans e.U</span>
+  {/* Верхняя полоска с контактами */}
+  <div
+    className="text-white py-2 my-8"
+    style={{ background: CORAL }}
+  >
+    <div
+      className="mx-auto w-full max-w-[1150px] px-4 py-3
+                 grid grid-cols-1 sm:grid-cols-3 gap-3"
+    >
+      {/* Компания */}
+      <div className="flex items-center justify-center sm:justify-start gap-2">
+        {/* building */}
+        <svg className="w-6 h-6 shrink-0" viewBox="0 0 24 24" fill="none"
+             stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+          <path d="M12 3 19 7v5c0 5-3.5 9-7 9s-7-4-7-9V7l7-4z" />
+          <path d="m9 12 2 2 4-4" />
+        </svg>
+        <span className="font-semibold">X-Trans e.U</span>
+      </div>
+
+      {/* Почта */}
+      <a
+        href="mailto:info@messielinz.at"
+        className="flex items-center justify-center sm:justify-start gap-2
+                   underline-offset-2 hover:underline focus:outline-none focus:ring-2"
+        style={{ outlineColor: 'rgba(255,255,255,.6)' }}
+      >
+        {/* mail */}
+        <svg className="w-5 h-5 shrink-0" viewBox="0 0 24 24" fill="none"
+             stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+          <path d="M4 6h16v12H4z" />
+          <path d="m22 6-10 7L2 6" />
+        </svg>
+        <span className="break-all">info@messielinz.at</span>
+      </a>
+
+      {/* Телефон */}
+      <a
+        href="tel:+436766135140"
+        className="flex items-center justify-center sm:justify-start gap-2
+                   underline-offset-2 hover:underline focus:outline-none focus:ring-2"
+        style={{ outlineColor: 'rgba(255,255,255,.6)' }}
+      >
+        {/* phone */}
+        <svg className="w-5 h-5 shrink-0" viewBox="0 0 24 24" fill="none"
+             stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+          <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.77 19.77 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.77 19.77 0 0 1 2.08 4.18 2 2 0 0 1 4.06 2h3a2 2 0 0 1 2 1.72c.12.9.33 1.77.61 2.6a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.48-1.13a2 2 0 0 1 2.11-.45c.83.28 1.7.49 2.6.61A2 2 0 0 1 22 16.92z"/>
+        </svg>
+        <span className="whitespace-nowrap">+43 6766135140</span>
+      </a>
     </div>
-
-    {/* Почта */}
-    <a href="mailto:info@antikexperte.at"
-       className="flex items-center justify-center sm:justify-start gap-2
-                  underline-offset-2 hover:underline focus:outline-none focus:ring-2 focus:ring-white/60">
-      {/* mail */}
-      <svg className="w-5 h-5 shrink-0" viewBox="0 0 24 24" fill="none"
-           stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M4 6h16v12H4z" />
-        <path d="m22 6-10 7L2 6" />
-      </svg>
-      <span className="break-all">info@antikexperte.at</span>
-    </a>
-
-    {/* Телефон */}
-    <a href="tel:+436767202623"
-       className="flex items-center justify-center sm:justify-start gap-2
-                  underline-offset-2 hover:underline focus:outline-none focus:ring-2 focus:ring-white/60">
-      {/* phone */}
-      <svg className="w-5 h-5 shrink-0" viewBox="0 0 24 24" fill="none"
-           stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.77 19.77 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.77 19.77 0 0 1 2.08 4.18 2 2 0 0 1 4.06 2h3a2 2 0 0 1 2 1.72c.12.9.33 1.77.61 2.6a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.48-1.13a2 2 0 0 1 2.11-.45c.83.28 1.7.49 2.6.61A2 2 0 0 1 22 16.92z"/>
-      </svg>
-      <span className="whitespace-nowrap">+436767202623</span>
-    </a>
   </div>
-</div>
 
-      <article className="wp-doc" dangerouslySetInnerHTML={{ __html: html }} />
-    </main>
+  <article
+    className="wp-doc prose prose-sm md:prose-base max-w-none"
+    style={{
+      // лёгкая адаптация типографики под бренд
+      '--tw-prose-body': PLUM,
+      '--tw-prose-headings': PLUM,
+      '--tw-prose-links': CORAL,
+      '--tw-prose-bold': PLUM,
+      '--tw-prose-counters': PLUM,
+      '--tw-prose-bullets': PLUM,
+      '--tw-prose-hr': MINT,
+      '--tw-prose-quotes': PLUM,
+      '--tw-prose-quote-borders': MINT,
+      '--tw-prose-captions': PLUM,
+      '--tw-prose-code': PLUM,
+      '--tw-prose-th-borders': MINT,
+      '--tw-prose-td-borders': MINT,
+    } as React.CSSProperties}
+    dangerouslySetInnerHTML={{ __html: html }}
+  />
+</main>
+
   );
 }
