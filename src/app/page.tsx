@@ -202,21 +202,21 @@ export default function Home() {
     <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
       {[
         {
-          title: 'Messie Hilfe',
+          title: 'Messie Hilfe in Linz',
           text:
             'Diskrete und einfühlsame Unterstützung bei stark belasteten Wohnungen – Schritt für Schritt zu einem neuen Anfang.',
           href: '/leistungen/messie-hilfe',
         },
         {
-          title: 'Wohnungs- & Hausräumung',
+          title: 'Wohnungs- & Hausräumung in Linz',
           text:
             'Komplette Räumungen von Wohnungen oder Häusern in Linz – schnell, planbar und mit Fixpreis.',
           href: '/leistungen/wohnungsraeumung',
         },
         {
-          title: 'Keller & Dachboden räumen',
+          title: 'Antiquitäten Ankauf in Linz',
           text:
-            'Wir schaffen wieder Platz in Keller, Dachboden oder Garage – strukturiert und unkompliziert.',
+            'Professionelle Bewertung und fairer Sofortankauf von Schmuck, Möbeln und Kunstobjekten direkt vor Ort.',
           href: '/leistungen/keller-dachboden',
         },
         {
@@ -489,6 +489,55 @@ export default function Home() {
   />
 </section>
 
+<section
+  className="relative"
+  aria-label="Informationen zu Antiquitäten und Verlassenschaften"
+>
+  <div className="mx-auto w-full max-w-[1150px] px-4 py-16 md:py-20">
+    <h2 className="text-2xl md:text-3xl font-semibold mb-6" style={{ color: PLUM }}>
+      Ihr Antik Experte in Wien
+    </h2>
+    <p>
+      Wer nach einem <strong>Antik Experte</strong> in Wien sucht, möchte meist mehr als nur einen
+      einfachen Händler. Entscheidend ist eine fachkundige Beratung, ein geschultes Auge für
+      Details und die Fähigkeit, den ideellen sowie den materiellen Wert von Antiquitäten korrekt
+      einzuschätzen. Genau hier setzen wir an: mit langjähriger Erfahrung, diskretem Vorgehen
+      und einem Netzwerk von Sammler:innen und Liebhaber:innen, die auf der Suche nach besonderen
+      Stücken sind.
+    </p>
+
+    <h3 className="text-xl md:text-2xl font-semibold mb-4 mt-4" style={{ color: PLUM }}>
+      Antiquitäten Ankauf in Wien – seriös & transparent
+    </h3>
+    <p>
+      Der <strong>Antiquitäten Ankauf in Wien</strong> ist Vertrauenssache. Ob Möbel, Gemälde,
+      Schmuckstücke oder kleine Alltagsgegenstände aus vergangenen Epochen – jedes Objekt erzählt
+      eine eigene Geschichte. Wir nehmen uns Zeit, diese Geschichten zu würdigen, und erstellen
+      faire Angebote, die auf realistischen Marktwerten basieren. Dabei legen wir Wert auf
+      Transparenz: Sie erfahren nachvollziehbar, wie sich unser Preis zusammensetzt und welche
+      Faktoren in die Bewertung einfließen.
+    </p>
+
+    <h3 className="text-xl md:text-2xl font-semibold mb-4 mt-4" style={{ color: PLUM }}>
+      Antiquitäten &amp; Verlassenschaften in Wien
+    </h3>
+    <p>
+      Besonders sensibel ist der Umgang mit <strong>Antiquitäten &amp; Verlassenschaften in Wien</strong>.
+      Oft sind es persönliche Erinnerungsstücke, die nicht nur materiellen, sondern auch emotionalen
+      Wert haben. Unser Anspruch ist es, respektvoll mit diesen Objekten umzugehen, sie im
+      bestmöglichen Kontext weiterzugeben und Ihnen die Abwicklung so angenehm wie möglich zu
+      gestalten. Von der ersten Kontaktaufnahme bis hin zur endgültigen Übergabe begleiten wir Sie
+      zuverlässig und einfühlsam.
+    </p>
+
+    <p>
+      Ob es sich um eine einzelne Rarität handelt oder um eine umfangreiche Sammlung: wir stehen als
+      kompetenter Ansprechpartner zur Verfügung. Unser Ziel ist es, Antiquitäten nicht nur zu
+      bewerten, sondern ihre Bedeutung sichtbar zu machen – für Käufer:innen, für Sammler:innen und
+      für die nächste Generation.
+    </p>
+  </div>
+</section>
 
 
 {/* SECTION 6: FAQ + CTA */}
