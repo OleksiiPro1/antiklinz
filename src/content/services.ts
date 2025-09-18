@@ -12,64 +12,64 @@ export type Service = {
 
 export const services: Service[] = [
   {
-    slug: 'ankauf-antiquitaeten-moebel-wien', 
-    image: '/images/sl-9.webp',
+    slug: 'messie-entruempelung-linz',
+    image: '/images/Leistungen-6.webp',
     width: 1200,
     height: 800,
-    alt: 'Antiquitäten und Möbel Ankauf in Wien',
-    title: 'Ankauf Antiquitäten Möbel – Faire Preise & bester Service in Wien',
-    date: '2025-08-01',
-    excerpt: 'Wir kombinieren fachliche Präzision mit schneller, respektvoller Abwicklung. Von der ersten Nachricht bis zur Auszahlung bleiben Abläufe transparent.'
+    alt: 'Messie Entrümpelung Linz – diskret & respektvoll',
+    title: 'Messie Entrümpelung Linz – diskret & respektvoll',
+    date: '2025-09-10',
+    excerpt: 'Diskrete Messie Hilfe in Linz: respektvoll, strukturiert und mit Fixpreis. Von der kostenlosen Besichtigung bis zur besenreinen Übergabe – alles aus einer Hand.'
   },
   {
-    slug: 'ankauf-antiquitaeten-keramik-wien',
-    image: '/images/sl-12.webp',
+    slug: 'entruempelungsfirma-linz',
+    image: '/images/Leistungen-2.webp',
     width: 1200,
     height: 800,
-    alt: 'Ankauf Antiquitäten Keramik',
-    title: 'Ankauf Antiquitäten Keramik – Expertenbewertung',
-    date: '2025-08-02',
-    excerpt: 'Kostenlose Foto-Ersteinschätzung, transparente Angebote auf Basis echter Marktwerte und – bei Einigung – sofortige Auszahlung per Barzahlung oder Echtzeit-Überweisung.'
+    alt: 'Entrümpelungsfirma Linz – professionelle Räumungen',
+    title: 'Entrümpelungsfirma Linz – professionelle Räumungen',
+    date: '2025-09-11',
+    excerpt: 'Ihre erfahrene Entrümpelungsfirma in Linz für Wohnungen, Häuser und Keller. Professionelle Planung, klare Abläufe und transparente Fixpreise.'
   },
   {
-    slug: 'ankauf-antiquitaeten-muenzen-wien',
-    image: '/images/sl-11.webp',
+    slug: 'entruempelungsservice-linz',
+    image: '/images/Leistungen-3.webp',
     width: 1200,
     height: 800,
-    alt: 'Antiquitäten Münzen verkaufen',
-    title: 'Antiquitäten Münzen verkaufen in Wien – Numismatik-Ankauf & Beratung',
-    date: '2025-08-03',
-    excerpt: 'Wir kombinieren Numismatik-Know-how mit einem klaren, nachvollziehbaren Prozess. '
+    alt: 'Entrümpelungsservice Linz – schnell & zuverlässig',
+    title: 'Entrümpelungsservice in Linz – schnell & zuverlässig',
+    date: '2025-09-12',
+    excerpt: 'Schneller und verlässlicher Entrümpelungsservice in Linz: flexible Termine, faire Konditionen und diskrete Abwicklung mit Fixpreis-Garantie.'
   },
   {
-    slug: 'ankauf-antiquitaeten-silber-schmuck-wien',
-    image: '/images/sl-19.webp',
+    slug: 'sperrmuellabholung-linz',
+    image: '/images/Leistungen-4.webp',
     width: 1200,
     height: 800,
-    alt: 'Ankauf Antiquitäten Silber & Schmuck',
-    title: 'Ankauf Antiquitäten Silber & Schmuck – Faire Angebote in Wien',
-    date: '2025-08-04',
-    excerpt: 'Antikexperte.at steht für seriösen Ankauf von Antiquitäten, Silber & Schmuck in Wien. Mit geprüfter Expertise.'
+    alt: 'Sperrmüllabholung Linz – flexibel & unkompliziert',
+    title: 'Sperrmüllabholung in Linz – flexibel & unkompliziert',
+    date: '2025-09-13',
+    excerpt: 'Wir holen Sperrmüll in Linz schnell und unkompliziert ab – mit kurzfristigen Terminen und klar kalkulierten Preisen. Ihre Entlastung steht im Mittelpunkt.'
   },
   {
-    slug: 'ankauf-antiquitaten-banknoten',
-    image: '/images/sl-21.webp',
+    slug: 'entruempelungsdienst-linz',
+    image: '/images/Leistungen-5.webp',
     width: 1200,
     height: 800,
-    alt: 'Ankauf Antiquitäten Banknoten',
-    title: 'Ankauf Antiquitäten Banknoten – Schätzung & Ankauf',
-    date: '2025-08-05',
-    excerpt: 'Sie möchten historische Banknoten verkaufen – einzelne Stücke, eine Sammlung oder einen Nachlass?'
+    alt: 'Entrümpelungsdienst Linz – Fixpreis & Termin',
+    title: 'Entrümpelungsdienst in Linz – Fixpreis & Termin',
+    date: '2025-09-14',
+    excerpt: 'Ihr verlässlicher Entrümpelungsdienst in Linz: Fixpreis-Vereinbarung, termingerechte Durchführung und respektvoller Umgang mit allen Gegenständen.'
   },
   {
-    slug: 'ankauf-antiquitaeten-teppiche-wien',
-    image: '/images/sl-16.webp',
+    slug: 'wohnungsaufloesungen-linz',
+    image: '/images/Leistungen-1.webp',
     width: 1200,
     height: 800,
-    alt: 'Ankauf antiker Teppiche',
-    title: 'Ankauf antiker Teppiche – Begutachtung & faires Angebot (Wien)',
-    date: '2025-08-06',
-    excerpt: 'Antikexperte.at kauft antike und alte Teppiche jeder Art: Perserteppiche, Kaukasier, anatolische Stücke, Seidenteppiche, Kelims und seltene Einzelstücke.'
-  },
+    alt: 'Wohnungsauflösungen Linz – planbar & sorgfältig',
+    title: 'Wohnungsauflösungen in Linz – planbar & sorgfältig',
+    date: '2025-09-15',
+    excerpt: 'Komplette Wohnungsauflösungen in Linz mit sorgfältiger Planung, klaren Abläufen und besenreiner Übergabe. Diskret, respektvoll und zuverlässig.'
+  }
   
 ];

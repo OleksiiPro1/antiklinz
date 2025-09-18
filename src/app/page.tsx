@@ -1,6 +1,7 @@
 // app/page.tsx
 import Link from 'next/link';
 import Image from 'next/image';
+import Leistungen from './components/Leistungen';
 
 const PLUM = '#4A235A';
 const CORAL = '#FF6F61';
@@ -56,7 +57,7 @@ export default function Home() {
 
               <div className="mt-6 flex flex-wrap items-center gap-3">
                 <Link
-                  href="/kontakt"
+                  href="https://wa.me/436766135140"
                   className="inline-flex items-center justify-center rounded-xl px-5 py-3 text-sm font-medium shadow-sm transition hover:opacity-95"
                   style={{ background: CORAL, color: 'white' }}
                 >
@@ -199,68 +200,10 @@ export default function Home() {
       </p>
     </div>
 
-    <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-      {[
-        {
-          title: 'Messie Hilfe in Linz',
-          text:
-            'Diskrete und einfühlsame Unterstützung bei stark belasteten Wohnungen – Schritt für Schritt zu einem neuen Anfang.',
-          href: '/leistungen/messie-hilfe',
-        },
-        {
-          title: 'Wohnungs- & Hausräumung in Linz',
-          text:
-            'Komplette Räumungen von Wohnungen oder Häusern in Linz – schnell, planbar und mit Fixpreis.',
-          href: '/leistungen/wohnungsraeumung',
-        },
-        {
-          title: 'Antiquitäten Ankauf in Linz',
-          text:
-            'Professionelle Bewertung und fairer Sofortankauf von Schmuck, Möbeln und Kunstobjekten direkt vor Ort.',
-          href: '/leistungen/keller-dachboden',
-        },
-        {
-          title: 'Nachlass / Verlassenschaft',
-          text:
-            'Respektvolle Auflösung von Nachlässen in Linz. Wichtige Erinnerungen bleiben, wir kümmern uns um den Rest.',
-          href: '/leistungen/verlassenschaft',
-        },
-        {
-          title: 'Büro- & Firmenräumung',
-          text:
-            'Professionelle Räumungen von Büros oder Gewerbeflächen – auch kurzfristig möglich.',
-          href: '/leistungen/firmenraeumung',
-        },
-        {
-          title: 'Schnellhilfe bei kurzfristigem Bedarf',
-          text:
-            'Sie benötigen sofortige Unterstützung? Wir sind flexibel einsetzbar und schnell vor Ort in Linz.',
-          href: '/kontakt',
-        },
-      ].map((s, i) => (
-        <Link
-          key={i}
-          href={s.href}
-          className="group relative flex flex-col justify-between rounded-2xl border p-6 transition hover:shadow-md"
-          style={{ borderColor: SAND, background: 'white' }}
-        >
-          <div>
-            <h3 className="text-lg font-semibold mb-2 group-hover:underline" style={{ color: PLUM }}>
-              {s.title}
-            </h3>
-            <p className="text-sm leading-relaxed" style={{ color: PLUM }}>
-              {s.text}
-            </p>
-          </div>
-          <span
-            className="mt-4 inline-block text-sm font-medium"
-            style={{ color: CORAL }}
-          >
-            Mehr erfahren →
-          </span>
-        </Link>
-      ))}
-    </div>
+    
+     {/* Сетка услуг из твоего компонента */}
+             <Leistungen />
+   
   </div>
 </section>
 
@@ -348,7 +291,7 @@ export default function Home() {
     {/* CTA unterhalb */}
     <div className="mt-12 text-center">
       <Link
-        href="/kontakt"
+        href="https://wa.me/436766135140"
         className="inline-flex items-center justify-center rounded-xl px-6 py-3 text-sm font-medium shadow-sm transition hover:opacity-95"
         style={{ background: CORAL, color: 'white' }}
       >
@@ -638,18 +581,18 @@ export default function Home() {
       </p>
       <div className="mt-5 flex flex-wrap items-center justify-center gap-3">
         <Link
-          href="/kontakt"
+          href="https://wa.me/436766135140"
           className="inline-flex items-center justify-center rounded-xl px-6 py-3 text-sm font-medium shadow-sm transition hover:opacity-95"
           style={{ background: CORAL, color: 'white' }}
         >
           Jetzt kostenlose Besichtigung anfragen
         </Link>
         <Link
-          href="tel:+43XXXXXXXXX"
+          href="tel:+436766135140"
           className="inline-flex items-center justify-center rounded-xl px-6 py-3 text-sm font-medium border transition"
           style={{ borderColor: MINT, color: TEAL }}
         >
-          +43&nbsp;XX&nbsp;XXX&nbsp;XX&nbsp;XX anrufen
+          +436766135140 anrufen
         </Link>
       </div>
     </div>

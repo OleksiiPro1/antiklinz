@@ -13,10 +13,8 @@ const TEAL = '#006D77';       // hover / emphasis
 
 const links = [
   { href: '/', label: 'Startseite' },
-  { href: '/leistungen1', label: 'Leistungen' },
-  { href: '/ueber-uns1', label: 'Über uns' },
-  { href: '/blog1', label: 'Blog' },
-  { href: '/kontakt1', label: 'Kontakt' },
+  { href: '/leistungen', label: 'Leistungen' },
+  { href: '/ueber-uns', label: 'Über uns' },
   { href: '/impressum', label: 'Impressum' },
 ];
 

@@ -43,11 +43,9 @@ export default function Footer() {
             <h3 className="mb-3 text-base font-semibold" style={{ color: PLUM }}>Sitemap</h3>
             <ul className="space-y-2">
               {[
-                { href: '/leistungen1', label: 'Leistungen' },
-                { href: '/ueber-uns1', label: 'Über uns' },
-                { href: '/preise1', label: 'Preise' },
-                { href: '/blog1', label: 'Blog' },
-                { href: '/kontakt1', label: 'Kontakt' },
+                { href: '/', label: 'Startseite' },
+                { href: '/ueber-uns', label: 'Über uns' },
+                { href: '/leistungen', label: 'Leistungen' },
               ].map((l) => (
                 <li key={l.href}>
                   <Link
@@ -68,8 +66,8 @@ export default function Footer() {
             <ul className="space-y-2 text-sm">
               <li style={{ color: PLUM }}>Linz & Umgebung</li>
               <li>
-                <a href="tel:+43XXXXXXXXX" className="hover:underline" style={{ color: TEAL }}>
-                  +43 XX XXX XX XX
+                <a href="tel:+436766135140" className="hover:underline" style={{ color: TEAL }}>
+                  +436766135140
                 </a>
               </li>
               <li>
@@ -80,12 +78,14 @@ export default function Footer() {
             </ul>
             <div className="mt-4">
               <Link
-                href="/kontakt"
-                className="inline-flex items-center rounded-xl px-4 py-2 text-sm font-medium shadow-sm transition"
-                style={{ background: CORAL, color: 'white' }}
-              >
-                Kostenlos anfragen
-              </Link>
+  href="https://wa.me/436766135140"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="inline-flex items-center rounded-xl px-4 py-2 text-sm font-medium shadow-sm transition"
+  style={{ background: '#25D366', color: 'white' }}
+>
+  WhatsApp Chat starten
+</Link>
             </div>
           </div>
         </div>
@@ -97,7 +97,7 @@ export default function Footer() {
             © {new Date().getFullYear()} messielinz.at – Alle Rechte vorbehalten.
           </p>
           <div className="flex items-center gap-4 text-xs">
-            <span aria-hidden="true" style={{ color: PLUM }}>•</span>
+            
             <Link href="/impressum" className="hover:underline" style={{ color: PLUM, textDecorationColor: CORAL }}>
               Impressum
             </Link>
