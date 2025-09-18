@@ -1,14 +1,19 @@
 // app/ueber-uns/page.tsx
 import type { Metadata } from "next";
 import Link from "next/link";
-import Image from "next/image";
-export const metadata: Metadata = {
-  title: "Über uns – Antikexperte.at",
-  description:
-    "Antikexperte.at – über 5 Jahre Erfahrung im Ankauf & Verkauf von Antiquitäten in Wien und ganz Österreich. Transparente Bewertungen, diskrete Abwicklung, faire Preise.",
-};
 
-const ACCENT = "#b38b5999"; // ваш цвет-акцент
+
+const PLUM = "#4A235A";
+const CORAL = "#FF6F61";
+const MINT  = "#A8E6CF";
+const SAND  = "#F5E6CC";
+const TEAL  = "#006D77";
+
+export const metadata: Metadata = {
+  title: "Über uns – messielinz.at",
+  description:
+    "messielinz.at – Messie Hilfe, Wohnungs- & Hausräumungen sowie Verlassenschaften in Linz und Umgebung. Ruhig, respektvoll und planbar mit Fixpreis und kurzfristigen Terminen.",
+};
 
 export default function UeberUnsPage() {
   return (
@@ -17,48 +22,62 @@ export default function UeberUnsPage() {
       <section className="pt-28 pb-12 max-w-6xl mx-auto px-6">
         <div
           className="rounded-3xl border shadow-sm p-8 md:p-10 bg-white/80 backdrop-blur"
-          style={{ borderColor: ACCENT }}
+          style={{ borderColor: SAND }}
         >
-          <p className="text-sm uppercase tracking-wider text-gray-500">
-            Antikexperte.at
+          <p className="text-sm uppercase tracking-wider" style={{ color: TEAL }}>
+            messielinz.at
           </p>
-          <h1 className="text-4xl md:text-6xl font-light leading-tight mt-2">
+          <h1
+            className="text-4xl md:text-6xl font-semibold leading-tight mt-2"
+            style={{ color: PLUM }}
+          >
             Über uns
           </h1>
-          <p className="mt-4 text-gray-700">
-            Wir sind ein Wiener Fachbetrieb mit <strong>über 5 Jahren Erfahrung</strong> im
-            <strong> Ankauf und Verkauf von Antiquitäten</strong>. Für private Kundinnen und Kunden,
-            Nachlässe und Sammlungen bieten wir eine klare Bewertung, faire Angebote und eine
-            zügige, diskrete Abwicklung.
+          <p className="mt-4 text-base md:text-lg leading-relaxed" style={{ color: PLUM }}>
+            Wir sind ein Team aus Linz, das Menschen in herausfordernden Wohnsituationen
+            zuverlässig unterstützt: mit ruhigem Auftreten, klarer Planung und Lösungen,
+            die sich an den Alltag unserer Kund:innen anpassen. Seit Jahren begleiten wir
+            Messie Fälle, Wohnungs- &amp; Hausräumungen sowie Verlassenschaften – immer
+            respektvoll, diskret und mit verbindlichen Zusagen.
           </p>
 
           <div className="mt-6 flex flex-wrap gap-2">
             <span
               className="inline-flex items-center rounded-full px-3 py-1 text-sm"
-              style={{ background: ACCENT }}
+              style={{ background: `${MINT}66`, color: TEAL }}
             >
-              5+ Jahre Erfahrung
+              Kostenlose Besichtigung
             </span>
-            <span className="inline-flex items-center rounded-full border px-3 py-1 text-sm text-gray-700">
-              Wien – alle 23 Bezirke
+            <span
+              className="inline-flex items-center rounded-full border px-3 py-1 text-sm"
+              style={{ borderColor: SAND, color: PLUM }}
+            >
+              Fixpreis vor Start
             </span>
-            <span className="inline-flex items-center rounded-full border px-3 py-1 text-sm text-gray-700">
-              bis 200 km & österreichweit
+            <span
+              className="inline-flex items-center rounded-full border px-3 py-1 text-sm"
+              style={{ borderColor: SAND, color: PLUM }}
+            >
+              Linz &amp; Umgebung
             </span>
           </div>
-          {/* BILD – положите картинку в public/images/ueber-uns-hero.webp */}
-          <figure className="mt-8 overflow-hidden rounded-2xl border shadow-sm bg-white" style={{ borderColor: ACCENT }}>
-            <Image
-              src="/images/sl-43.webp"
-              alt="Einblick in unsere Arbeit – Auswahl an Antiquitäten"
-              width={1600}
-              height={900}
-              priority
-              sizes="(min-width: 1024px) 1024px, 100vw"
-              className="w-full h-auto object-cover"
+
+          {/* BILD */}
+          <figure
+            className="mt-8 overflow-hidden  shadow-sm bg-white"
+            style={{ borderColor: SAND }}
+          >
+            <video
+              className="w-full h-auto shadow-md"
+              src="/videos/uber-uns.mp4"
+              autoPlay
+              muted
+              loop
+              playsInline
             />
-            <figcaption className="px-4 py-3 text-sm text-gray-600">
-              Einblick in unsere Arbeit – Auswahl an Antiquitäten aus Wien und Umgebung.
+            <figcaption className="px-4 py-3 text-sm" style={{ color: PLUM }}>
+              Einblicke aus Linz: sorgfältige Vorbereitung, klare Absprachen und eine
+              ruhige Umsetzung – so arbeiten wir tagtäglich.
             </figcaption>
           </figure>
         </div>
@@ -66,56 +85,113 @@ export default function UeberUnsPage() {
 
       {/* WER WIR SIND */}
       <section className="pb-10 max-w-6xl mx-auto px-6">
-        <div className="mx-auto max-w-6xl space-y-4">
-          <h2 className="text-3xl font-semibold leading-tight">Wer wir sind</h2>
-          <p className="text-gray-700">
-            Antikexperte.at verbindet kaufmännische Sorgfalt mit echter Leidenschaft für
-            historische Objekte. Seit mehr als fünf Jahren sind wir in Wien und Umgebung tätig:
-            <strong> Silber, Schmuck, Porzellan, Münzen, Banknoten, Kunst & Design</strong> –
-            qualitätsvolle Stücke erhalten bei uns eine fundierte Einschätzung und ein
-            marktgerechtes Angebot.
+        <div className="space-y-4">
+          <h2 className="text-3xl font-semibold leading-tight" style={{ color: PLUM }}>
+            Wer wir sind
+          </h2>
+          <p className="text-base md:text-lg leading-relaxed" style={{ color: PLUM }}>
+            messielinz.at verbindet praktische Erfahrung mit einem feinen Gespür für sensible
+            Situationen. Wir arbeiten mit einem klaren Ablauf, bleiben in jeder Phase
+            ansprechbar und achten darauf, dass Entscheidungen nachvollziehbar getroffen werden.
+            Unser Anspruch ist es, Räume nicht nur leer zu hinterlassen, sondern wieder
+            nutzbar zu machen – als Grundlage für einen entspannten Neuanfang.
           </p>
-          <p className="text-gray-700">
-            Unser Anspruch: <em>transparent, respektvoll und verlässlich</em> zu arbeiten – von der
-            ersten Fotovoranfrage bis zur Auszahlung. Auf Wunsch kommen wir zu Ihnen nach Hause
-            (1.–23. Bezirk) oder betreuen Projekte im erweiterten Umfeld.
+          <p className="text-base md:text-lg leading-relaxed" style={{ color: PLUM }}>
+            Ob kleine Wohnung, Haus mit Keller oder ein Nachlass, der geordnet übergeben werden
+            soll: Wir planen den Umfang realistisch, stimmen Tempo und Termine mit Ihnen ab
+            und halten Zusagen ein. Viele Aufträge betreuen wir mit Schlüsselübernahme, damit
+            Sie sich um möglichst wenig kümmern müssen.
           </p>
         </div>
       </section>
 
       {/* WAS WIR TUN */}
       <section className="pb-10 max-w-6xl mx-auto px-6">
-        <div className="mx-auto max-w-6xl space-y-6">
-          <h2 className="text-3xl font-semibold leading-tight">Was wir tun</h2>
+        <div className="space-y-6">
+          <h2 className="text-3xl font-semibold leading-tight" style={{ color: PLUM }}>
+            Was wir tun
+          </h2>
 
           <div className="grid gap-6">
-            <article className="rounded-2xl border bg-white p-6" style={{ borderColor: ACCENT }}>
-              <h3 className="text-xl font-semibold">Ankauf & Verkauf</h3>
-              <p className="mt-2 text-gray-700">
-                Bewertung und Ankauf von <strong>Antiquitäten</strong> aller Art – Einzelstücke,
-                Sammlungen und Nachlässe. Auf Basis aktueller Marktwerte und klarer Kriterien
-                (Zustand, Seltenheit, Provenienz) erhalten Sie ein nachvollziehbares Angebot. Die
-                Auszahlung erfolgt auf Wunsch sofort.
+            <article
+              className="rounded-2xl border bg-white p-6"
+              style={{ borderColor: SAND }}
+            >
+              <h3 className="text-xl font-semibold" style={{ color: PLUM }}>
+                Messie Hilfe
+              </h3>
+              <p className="mt-2 text-base leading-relaxed" style={{ color: PLUM }}>
+                Einfühlsame Begleitung bei stark belasteten Wohnungen: Wir sichern
+                Erinnerungsstücke, arbeiten Schritt für Schritt und dokumentieren auf Wunsch
+                den Fortschritt. Ziel ist eine spürbare Entlastung und eine Übergabe,
+                die sofort nutzbar ist.
               </p>
             </article>
 
-            <article className="rounded-2xl border bg-white p-6" style={{ borderColor: ACCENT }}>
-              <h3 className="text-xl font-semibold">Vor-Ort-Service</h3>
-              <p className="mt-2 text-gray-700">
-                Hausbesuche in ganz Wien (1–23) sowie im Umland. Termine sind flexibel –
-                werktags, abends und nach Absprache am Wochenende. Für umfangreichere Bestände
-                übernehmen wir die strukturierte Abwicklung.
+            <article
+              className="rounded-2xl border bg-white p-6"
+              style={{ borderColor: SAND }}
+            >
+              <h3 className="text-xl font-semibold" style={{ color: PLUM }}>
+                Wohnungs- &amp; Hausräumungen
+              </h3>
+              <p className="mt-2 text-base leading-relaxed" style={{ color: PLUM }}>
+                Komplettlösungen für Wohnungen und Häuser in Linz und Umgebung.
+                Besichtigung, Fixpreis, verlässliche Durchführung und pünktliche Übergabe
+                – damit Sie schnell wieder handlungsfähig sind.
               </p>
             </article>
 
-            <article className="rounded-2xl border bg-white p-6" style={{ borderColor: ACCENT }}>
-              <h3 className="text-xl font-semibold">Spezielle Projekte</h3>
-              <p className="mt-2 text-gray-700">
-                Neben dem klassischen Ankauf unterstützen wir bei Räumungen und Projektarbeiten,
-                darunter auch Formate wie <strong>„Macy’s Entrumpling“</strong>,{" "}
-                <strong>„Metrupling“</strong> und <strong>„Freelance Entrumpling“</strong>
-                &nbsp;(kundenindividuelle Räum- und Projektservices). Sprechen Sie uns mit Ihrem
-                Bedarf an – wir finden eine passende Lösung.
+            <article
+              className="rounded-2xl border bg-white p-6"
+              style={{ borderColor: SAND }}
+            >
+              <h3 className="text-xl font-semibold" style={{ color: PLUM }}>
+                Keller, Dachboden &amp; Garage räumen
+              </h3>
+              <p className="mt-2 text-base leading-relaxed" style={{ color: PLUM }}>
+                Wir schaffen wieder Platz in Bereichen, die lange ungenutzt waren.
+                Geordnetes Vorgehen, kurze Wege und klare Absprachen sorgen dafür,
+                dass der Ablauf überschaubar bleibt.
+              </p>
+            </article>
+
+            <article
+              className="rounded-2xl border bg-white p-6"
+              style={{ borderColor: SAND }}
+            >
+              <h3 className="text-xl font-semibold" style={{ color: PLUM }}>
+                Nachlass / Verlassenschaft
+              </h3>
+              <p className="mt-2 text-base leading-relaxed" style={{ color: PLUM }}>
+                Respektvolle Auflösung und geordnete Übergabe. Wir stimmen die Schritte
+                mit Angehörigen ab, sichern bedeutsame Stücke und halten Fristen zuverlässig ein.
+              </p>
+            </article>
+
+            <article
+              className="rounded-2xl border bg-white p-6"
+              style={{ borderColor: SAND }}
+            >
+              <h3 className="text-xl font-semibold" style={{ color: PLUM }}>
+                Büro- &amp; Firmenräumungen
+              </h3>
+              <p className="mt-2 text-base leading-relaxed" style={{ color: PLUM }}>
+                Strukturiertes Vorgehen für gewerbliche Flächen: klare Zeitpläne, ruhiges Arbeiten
+                und eine saubere Übergabe, damit der Betrieb rasch weiterlaufen kann.
+              </p>
+            </article>
+
+            <article
+              className="rounded-2xl border bg-white p-6"
+              style={{ borderColor: SAND }}
+            >
+              <h3 className="text-xl font-semibold" style={{ color: PLUM }}>
+                Schnellhilfe bei kurzfristigem Bedarf
+              </h3>
+              <p className="mt-2 text-base leading-relaxed" style={{ color: PLUM }}>
+                Wenn es einmal rasch gehen muss, priorisieren wir Ihr Anliegen und finden
+                den nächstmöglichen Termin – transparent kommuniziert und verbindlich umgesetzt.
               </p>
             </article>
           </div>
@@ -124,51 +200,57 @@ export default function UeberUnsPage() {
 
       {/* WO WIR ARBEITEN */}
       <section className="pb-10 max-w-6xl mx-auto px-6">
-        <div className="mx-auto max-w-6xl space-y-4">
-          <h2 className="text-3xl font-semibold leading-tight">Wo wir arbeiten</h2>
-          <p className="text-gray-700">
-            Unser Kerngebiet ist <strong>Wien (1–23)</strong>. Zusätzlich betreuen wir Kundinnen
-            und Kunden <strong>im Umkreis von bis zu 100&nbsp;km</strong> (z. B. Niederösterreich,
-            Burgenland). Projekte realisieren wir <strong>regelmäßig in ganz Österreich</strong> –
-            je nach Volumen und Objektlage auch in Städten wie Graz, Linz, Salzburg oder Innsbruck.
+        <div className="space-y-4">
+          <h2 className="text-3xl font-semibold leading-tight" style={{ color: PLUM }}>
+            Wo wir arbeiten
+          </h2>
+          <p className="text-base md:text-lg leading-relaxed" style={{ color: PLUM }}>
+            Unser Schwerpunkt liegt in <strong>Linz</strong> und den umliegenden Gemeinden
+            in Oberösterreich. Bei Bedarf betreuen wir Projekte im erweiterten Umfeld –
+            fragen Sie einfach an, wir geben rasch Rückmeldung zu Verfügbarkeit und Terminen.
           </p>
         </div>
       </section>
 
       {/* VERSPRECHEN */}
       <section className="pb-10 max-w-6xl mx-auto px-6">
-        <div className="mx-auto max-w-6xl">
-          <div className="rounded-3xl border bg-white p-6 md:p-8" style={{ borderColor: ACCENT }}>
-            <h2 className="text-3xl font-semibold leading-tight">Unser Versprechen</h2>
-            <ul className="mt-4 list-disc pl-5 space-y-2 text-gray-700">
-              <li>Faire, marktnahe Angebote und klare Kommunikation – ohne Druck.</li>
-              <li>Diskrete Abwicklung, flexible Termine, auf Wunsch sofortige Auszahlung.</li>
-              <li>Respektvoller Umgang mit Objekten, Nachlässen und privaten Unterlagen.</li>
-            </ul>
-          </div>
+        <div className="rounded-3xl border bg-white p-6 md:p-8" style={{ borderColor: SAND }}>
+          <h2 className="text-3xl font-semibold leading-tight mb-3" style={{ color: PLUM }}>
+            Unser Versprechen
+          </h2>
+          <ul className="mt-2 list-disc pl-5 space-y-2 text-base leading-relaxed" style={{ color: PLUM }}>
+            <li>Transparente Angebote mit Fixpreis – nachvollziehbar und fair.</li>
+            <li>Diskretes, ruhiges Arbeiten und klare Zuständigkeiten.</li>
+            <li>Respektvoller Umgang mit Erinnerungsstücken und Unterlagen.</li>
+            <li>Verlässliche Termine und saubere Übergabe.</li>
+          </ul>
         </div>
       </section>
 
       {/* CTA */}
       <section className="pb-16 max-w-6xl mx-auto px-6">
-        <div className="mx-auto max-w-6xl text-center">
-          <h2 className="text-3xl font-semibold leading-tight">Sprechen wir über Ihr Anliegen</h2>
-          <p className="mt-3 text-gray-700">
-            Schicken Sie uns Fotos und kurze Infos – wir melden uns rasch mit einer Einschätzung
-            und Terminvorschlägen.
+        <div className="text-center">
+          <h2 className="text-3xl font-semibold leading-tight" style={{ color: PLUM }}>
+            Sprechen wir über Ihr Anliegen
+          </h2>
+          <p className="mt-3 text-base md:text-lg leading-relaxed" style={{ color: PLUM }}>
+            Schicken Sie uns eine kurze Nachricht – wir melden uns rasch mit einer Einschätzung
+            und Terminvorschlägen. Auf Wunsch übernehmen wir die Abwicklung mit Schlüsselübernahme.
           </p>
           <div className="mt-6 flex flex-col sm:flex-row gap-3 justify-center">
             <Link
-              href="https://wa.me/436767202623"
-              className="inline-flex items-center justify-center rounded-xl px-6 py-3 text-sm uppercase tracking-wide text-white transition-colors"
-              style={{ background: ACCENT }}
+              href="https://wa.me/436766135140"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center rounded-xl px-6 py-3 text-sm font-medium shadow-sm transition hover:opacity-95"
+              style={{ background: "#25D366", color: "white" }}
             >
-              Kontakt aufnehmen
+              WhatsApp&nbsp;anfragen
             </Link>
             <Link
               href="/leistungen"
-              className="inline-flex items-center justify-center rounded-xl border px-6 py-3 text-sm uppercase tracking-wide text-gray-800 hover:text-black transition-colors"
-              style={{ borderColor: ACCENT }}
+              className="inline-flex items-center justify-center rounded-xl px-6 py-3 text-sm font-medium transition"
+              style={{ border: `1px solid ${MINT}`, color: TEAL, background: "white" }}
             >
               Leistungen ansehen
             </Link>
