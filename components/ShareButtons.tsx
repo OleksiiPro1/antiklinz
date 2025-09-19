@@ -55,18 +55,7 @@ export default function ShareButtons({ siteUrl, title, className, small = true }
         ))}
       </div>
 
-      <div className="mt-2">
-        <button
-          onClick={async () => {
-            try { await navigator.clipboard.writeText(pageUrl); alert('Link kopiert ✅'); }
-            catch { prompt('Link kopieren:', pageUrl); }
-          }}
-          className="rounded-lg px-3 py-1.5 transition"
-          style={{ border: `1px solid ${MINT}`, color: PLUM, background: 'white' }}
-        >
-          Link kopieren
-        </button>
-      </div>
+  
     </div>
   );
 }
