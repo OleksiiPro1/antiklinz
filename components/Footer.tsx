@@ -1,6 +1,9 @@
 import Link from 'next/link';
 import Image from 'next/image';
+// Footer.tsx (серверный компонент)
 import ShareButtons from './ShareButtons';
+
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://messielinz.at';
 
 // Brand palette
 const PLUM = '#4A235A';
@@ -102,7 +105,7 @@ export default function Footer() {
          
 
   {/* Share кнопки — компактные */}
-  <ShareButtons small className="ml-2" />
+ <ShareButtons siteUrl={SITE_URL} small className="ml-2" />
 </div>
           
         </div>
