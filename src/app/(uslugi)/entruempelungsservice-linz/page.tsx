@@ -316,10 +316,10 @@ export default function Page() {
     {/* Grid mit Prozessfotos */}
     <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
       {[
-        { src: '/images/Entrümpelungsservice-1.webp', alt: 'Vorbereitung der Räume' },
-        { src: '/images/Entrümpelungsservice-2.webp', alt: 'Sorgfältiges Verpacken von Gegenständen' },
-        { src: '/images/Entrümpelungsservice-3.webp', alt: 'Transport innerhalb des Gebäudes' },
-        { src: '/images/Entrümpelungsservice-4.webp', alt: 'Übergabe nach Abschluss der Arbeiten' },
+        { src: '/images/Entrumpelungsservice-1.webp', alt: 'Vorbereitung der Räume' },
+        { src: '/images/Entrumpelungsservice-2.webp', alt: 'Sorgfältiges Verpacken von Gegenständen' },
+        { src: '/images/Entrumpelungsservice-3.webp', alt: 'Transport innerhalb des Gebäudes' },
+        { src: '/images/Entrumpelungsservice-4.webp', alt: 'Übergabe nach Abschluss der Arbeiten' },
       ].map((img, i) => (
         <figure
           key={i}

@@ -89,7 +89,7 @@ export default function Page() {
                 }}
               >
                 <Image
-                  src="/images/Entrümpelungsdienst2.webp"
+                  src="/images/Entrumpelungsdienst2.webp"
                   alt="Entrümpelungsdienst in Linz – Fixpreis & Termin"
                   fill
                   className="object-cover mix-blend-multiply"
