@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import ShareButtons from './ShareButtons';
 
 // Brand palette
 const PLUM = '#4A235A';
@@ -98,10 +99,12 @@ export default function Footer() {
           </p>
           <div className="flex items-center gap-4 text-xs">
             
-            <Link href="/impressum" className="hover:underline" style={{ color: PLUM, textDecorationColor: CORAL }}>
-              Impressum
-            </Link>
-          </div>
+         
+
+  {/* Share кнопки — компактные */}
+  <ShareButtons small className="ml-2" />
+</div>
+          
         </div>
       </div>
     </footer>
