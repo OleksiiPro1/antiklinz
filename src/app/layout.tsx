@@ -2,6 +2,7 @@ import './globals.css';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import type { Metadata } from 'next';
+import CookieConsent from "../app/components/CookieConsent";
 
 export const metadata: Metadata = {
    icons: {
@@ -23,6 +24,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className="font-sans text-dark">
         <Header />
         <main>{children}</main>
+        <CookieConsent />
         <Footer />
       </body>
     </html>
