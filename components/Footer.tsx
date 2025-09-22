@@ -75,8 +75,8 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a href="mailto:hello@messielinz.at" className="hover:underline" style={{ color: TEAL }}>
-                  hello@messielinz.at
+                <a href="mailto:info@messielinz.at" className="hover:underline" style={{ color: TEAL }}>
+                  info@messielinz.at
                 </a>
               </li>
             </ul>
