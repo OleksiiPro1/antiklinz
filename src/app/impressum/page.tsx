@@ -1,8 +1,8 @@
-const PLUM = '#4A235A';
-const CORAL = '#FF6F61';
-const MINT  = '#A8E6CF';
+const PLUM = '#7B2E2E';
+const CORAL = '#7B2E2E';
+const MINT  = '#2E4B3C';
 export const metadata = {
-  title: "Impressum - X-Trans e.U",
+  title: "Impressum - X-Trans e.U.",
   description: "Wir haben diese Datenschutzerklärung (Fassung 17.12.2022-112365468) verfasst, um Ihnen gemäß der Vorgaben der Datenschutz-Grundverordnung (EU) ",
 };
 export default function Impressum() {

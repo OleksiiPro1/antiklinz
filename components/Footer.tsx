@@ -1,61 +1,87 @@
-import Link from 'next/link';
-import Image from 'next/image';
-// Footer.tsx (серверный компонент)
-import ShareButtons from './ShareButtons';
+// components/Footer.tsx
+import Link from "next/link";
+import Image from "next/image";
+// серверный компонент
+import ShareButtons from "./ShareButtons";
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://messielinz.at';
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://antiklinz.at";
 
-// Brand palette
-const PLUM = '#4A235A';
-const CORAL = '#FF6F61';
-const MINT = '#A8E6CF';
-const SAND = '#F5E6CC';
-const TEAL = '#006D77';
+// Brand palette (AntikLinz)
+const BURGUNDY = "#7B2E2E";
+const GOLD     = "#C2A14D";
+const GREEN    = "#2E4B3C";
+const BASE     = "#F7F3ED";
+const GRAPHITE = "#2B2B2B";
 
-const CONTAINER = 'mx-auto w-full max-w-[1150px] px-4';
+const CONTAINER = "mx-auto w-full max-w-[1150px] px-4";
 
 export default function Footer() {
   return (
     <footer
-      className="mt-8 border-t"
+      aria-label="Seitenfuß"
+      className="mt-12"
       style={{
-        borderColor: MINT,
+        // светлый уникальный фон: тонкий бумажный градиент + золотистые «ореолы»
         backgroundImage:
-          `linear-gradient(180deg, rgba(255,255,255,.85), rgba(245,230,204,.95)), radial-gradient(60rem 20rem at 10% -10%, ${MINT}22, transparent), radial-gradient(60rem 20rem at 90% 110%, ${CORAL}14, transparent)`,
+          `linear-gradient(180deg, rgba(255,255,255,.94), ${BASE}),
+           radial-gradient(70rem 26rem at -10% 0%, ${GOLD}1F, transparent),
+           radial-gradient(70rem 26rem at 110% 100%, ${GREEN}14, transparent)`,
+        borderTop: `1px solid ${GOLD}55`,
       }}
     >
       <div className={`${CONTAINER} py-10`}>
-        <div className="grid gap-8 md:grid-cols-3">
+        {/* Верхняя полоса с декоративным элементом */}
+        <div className="flex items-center justify-center">
+          <div
+            className="h-px w-full max-w-[680px] relative"
+            style={{ background: `${GOLD}66` }}
+          >
+            <span
+              className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full px-3 py-1 text-xs"
+              style={{ background: "#fff", border: `1px solid ${GOLD}66`, color: BURGUNDY }}
+            >
+              AntikLinz
+            </span>
+          </div>
+        </div>
+
+        {/* Основная сетка */}
+        <div className="mt-8 grid gap-8 md:grid-cols-3">
           {/* Brand */}
           <div>
-            <div className="relative h-10 w-44 mb-4">
+            <div className="relative h-10 w-48 mb-4">
               <Image
-                src="/images/logo-messielinz.webp"   // прозрачный фон
-                alt="messielinz.at Logo"
+                src="/images/logo.webp" // логотип с прозрачным фоном
+                alt="AntikLinz Logo"
                 fill
                 className="object-contain"
-                sizes="176px"
+                sizes="192px"
+                priority
               />
             </div>
-            <p className="text-sm leading-relaxed" style={{ color: PLUM }}>
-              Messie & Entrümpelung in Linz und Umgebung – diskret, zuverlässig und schnell.
+            <p className="text-sm leading-relaxed" style={{ color: GRAPHITE }}>
+              Verlassenschaften, Nachlassankauf & Entrümpelung in Linz und Oberösterreich —
+              diskret, fair und termintreu.
             </p>
           </div>
 
-          {/* Quick links */}
+          {/* Sitemap */}
           <div>
-            <h3 className="mb-3 text-base font-semibold" style={{ color: PLUM }}>Sitemap</h3>
+            <h3 className="mb-3 text-base font-semibold" style={{ color: BURGUNDY }}>
+              Sitemap
+            </h3>
             <ul className="space-y-2">
               {[
-                { href: '/', label: 'Startseite' },
-                { href: '/ueber-uns', label: 'Über uns' },
-                { href: '/leistungen', label: 'Leistungen' },
+                { href: "/", label: "Startseite" },
+                { href: "/leistungen", label: "Leistungen" },
+                { href: "/ueber-uns", label: "Über uns" },
+                { href: "/impressum", label: "Impressum" },
               ].map((l) => (
                 <li key={l.href}>
                   <Link
                     href={l.href}
-                    className="transition-colors hover:underline underline-offset-4"
-                    style={{ color: PLUM, textDecorationColor: CORAL }}
+                    className="transition hover:opacity-90 underline underline-offset-4"
+                    style={{ color: GRAPHITE, textDecorationColor: GOLD }}
                   >
                     {l.label}
                   </Link>
@@ -64,50 +90,66 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Contact */}
+          {/* Kontakt */}
           <div>
-            <h3 className="mb-3 text-base font-semibold" style={{ color: PLUM }}>Kontakt</h3>
+            <h3 className="mb-3 text-base font-semibold" style={{ color: BURGUNDY }}>
+              Kontakt
+            </h3>
             <ul className="space-y-2 text-sm">
-              <li style={{ color: PLUM }}>Linz & Umgebung</li>
+              <li style={{ color: GRAPHITE }}>Linz, Oberösterreich</li>
               <li>
-                <a href="tel:+436766135140" className="hover:underline" style={{ color: TEAL }}>
-                  +436766135140
+                <a
+                  href="tel:+436767202623"
+                  className="hover:underline"
+                  style={{ color: GREEN }}
+                >
+                  +43 676 720 26 23
                 </a>
               </li>
               <li>
-                <a href="mailto:info@messielinz.at" className="hover:underline" style={{ color: TEAL }}>
-                  info@messielinz.at
+                <a
+                  href="mailto:info@antiklinz.at"
+                  className="hover:underline"
+                  style={{ color: GREEN }}
+                >
+                  info@antiklinz.at
                 </a>
               </li>
             </ul>
-            <div className="mt-4">
+
+            {/* Быстрые действия */}
+            <div className="mt-4 flex flex-wrap gap-3">
               <Link
-  href="https://wa.me/436766135140"
-  target="_blank"
-  rel="noopener noreferrer"
-  className="inline-flex items-center rounded-xl px-4 py-2 text-sm font-medium shadow-sm transition"
-  style={{ background: '#25D366', color: 'white' }}
->
-  WhatsApp Chat starten
-</Link>
+                href="mailto:info@antiklinz.at?subject=Anfrage%20AntikLinz"
+                className="inline-flex items-center rounded-xl px-4 py-2 text-sm font-medium shadow-sm transition hover:opacity-95"
+                style={{ background: BURGUNDY, color: "#fff" }}
+              >
+                Per E-Mail anfragen
+              </Link>
+              <Link
+                href="tel:+436767202623"
+                className="inline-flex items-center rounded-xl px-4 py-2 text-sm font-medium border transition"
+                style={{ borderColor: GOLD, color: GRAPHITE }}
+              >
+                Jetzt anrufen
+              </Link>
             </div>
           </div>
         </div>
 
-        {/* Bottom */}
-        <div className="mt-10 flex flex-col items-start justify-between gap-4 border-t pt-6 md:flex-row"
-             style={{ borderColor: MINT }}>
-          <p className="text-xs" style={{ color: PLUM }}>
-            © {new Date().getFullYear()} messielinz.at – Alle Rechte vorbehalten.
+        {/* Нижняя полоса */}
+        <div
+          className="mt-10 flex flex-col items-start justify-between gap-4 border-t pt-6 md:flex-row"
+          style={{ borderColor: `${GOLD}55` }}
+        >
+          <p className="text-xs" style={{ color: GRAPHITE }}>
+            © {new Date().getFullYear()} antiklinz.at — Alle Rechte vorbehalten.
           </p>
-          <div className="flex items-center gap-4 text-xs">
-            
-         
 
-  {/* Share кнопки — компактные */}
- <ShareButtons siteUrl={SITE_URL} small className="ml-2" />
-</div>
-          
+          <div className="flex items-center gap-4 text-xs">
+            {/* Кнопки шаринга (как в твоём примере) */}
+            <ShareButtons siteUrl={SITE_URL} small className="ml-2" />
+          </div>
         </div>
       </div>
     </footer>

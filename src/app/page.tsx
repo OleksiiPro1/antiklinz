@@ -1,31 +1,30 @@
 // app/page.tsx
-import Link from 'next/link';
-import Image from 'next/image';
-import Leistungen from './components/Leistungen';
+"use client";
 
-const PLUM = '#4A235A';
-const CORAL = '#FF6F61';
-const MINT  = '#A8E6CF';
-const SAND  = '#F5E6CC';
-const TEAL  = '#006D77';
+import Link from "next/link";
+import Image from "next/image";
 
-export const metadata = {
-  title: 'Messie & Entrümpelung Linz – diskret, schnell, zuverlässig',
-  description:
-    'Messie Hilfe, Räumung und Entrümpelung in Linz und Umgebung: diskret, respektvoll und mit klaren Fixpreisen. Jetzt kostenlos anfragen.',
+const BRAND = {
+  burgundy: "#7B2E2E", // основной (бордовый)
+  gold: "#C2A14D",     // акцент
+  green: "#2E4B3C",    // поддерживающий
+  base: "#F7F3ED",     // фон
+  graphite: "#2B2B2B", // текст
+  email: "info@antiklinz.at",
+  phone: "+43 676 720 26 23",
 };
 
 export default function Home() {
   return (
-    <main id="main" className="min-h-screen">
+    <main id="main" className="min-h-screen" style={{ background: BRAND.base, color: BRAND.graphite }}>
       {/* SECTION 1: HERO */}
       <section
-        className="relative"
         aria-label="Startbereich"
+        className="relative"
         style={{
           backgroundImage: `
-            radial-gradient(90rem 40rem at 10% -20%, ${MINT}33, transparent),
-            radial-gradient(80rem 50rem at 110% 60%, ${CORAL}22, transparent)
+            radial-gradient(70rem 35rem at 0% 0%, ${BRAND.gold}22, transparent),
+            radial-gradient(70rem 35rem at 100% 100%, ${BRAND.green}11, transparent)
           `,
         }}
       >
@@ -33,657 +32,867 @@ export default function Home() {
           <div className="grid items-center gap-10 md:grid-cols-2">
             {/* Text */}
             <div>
-              <span
-                className="inline-flex items-center rounded-full px-3 py-1 text-xs md:text-sm"
-                style={{ background: `${MINT}55`, color: TEAL }}
-              >
-                Linz & Umgebung • schnell vor Ort
-              </span>
-
               <h1
-                className="mt-4 text-3xl font-semibold leading-tight md:text-5xl"
-                style={{ color: PLUM }}
+                className="text-3xl md:text-5xl font-extrabold leading-tight"
+                style={{ color: BRAND.burgundy }}
               >
-                Messie & Entrümpelung in Linz —
-                <br className="hidden sm:block" />
-                <span style={{ color: CORAL }}>diskret</span>, respektvoll, ergebnisorientiert.
+                AntikLinz – Verlassenschaften, Nachlassankauf & Entrümpelung in Linz
               </h1>
 
-              <p className="mt-4 text-base md:text-lg leading-relaxed" style={{ color: PLUM }}>
-                Wir bringen wieder Ordnung in Wohnungen, Häuser und Keller —
-                strukturiert, feinfühlig und mit klaren Fixpreisen. Sie behalten das,
-                was wichtig ist. Den Rest übernehmen wir — schnell und leise.
+              <p className="mt-4 text-base md:text-lg leading-relaxed">
+                Seriöser Ankauf von Antiquitäten sowie diskrete Räumungen und Verlassenschaften in
+                <strong> Linz</strong> & <strong>Oberösterreich</strong>. Kostenlose Besichtigung,
+                faire Bewertung, schnelle Terminvergabe.
               </p>
 
-              <div className="mt-6 flex flex-wrap items-center gap-3">
-                <Link
-                  href="https://wa.me/436766135140"
-                  className="inline-flex items-center justify-center rounded-xl px-5 py-3 text-sm font-medium shadow-sm transition hover:opacity-95"
-                  style={{ background: CORAL, color: 'white' }}
-                >
-                  Kostenlos anfragen
-                </Link>
-                <Link
-                  href="/leistungen"
-                  className="inline-flex items-center justify-center rounded-xl px-5 py-3 text-sm font-medium border transition"
-                  style={{ borderColor: MINT, color: TEAL }}
-                >
-                  Leistungen ansehen
-                </Link>
-              </div>
-
-              <ul className="mt-6 grid grid-cols-1 gap-2 text-sm md:grid-cols-3">
+              <ul className="mt-5 grid gap-2 text-sm md:grid-cols-2">
                 {[
-                  'Absolute Diskretion',
-                  'Fixpreis vor Start',
-                  'Kurzfristige Termine',
+                  "Kostenlose & unverbindliche Besichtigung",
+                  "Faire Bewertung, klare Fixpreise",
+                  "Diskret und termintreu in Linz",
+                  "Ankauf: Silber, Porzellan, Gemälde, Möbel",
                 ].map((t) => (
-                  <li
-                    key={t}
-                    className="flex items-center gap-2"
-                    style={{ color: PLUM }}
-                  >
+                  <li key={t} className="flex items-center gap-2">
                     <span
                       className="inline-block h-2 w-2 rounded-full"
-                      style={{ background: CORAL }}
+                      style={{ background: BRAND.green }}
                       aria-hidden
                     />
                     {t}
                   </li>
                 ))}
               </ul>
+
+              <div className="mt-6 flex flex-wrap items-center gap-3">
+                <Link
+                  href={`mailto:${BRAND.email}`}
+                  className="inline-flex items-center justify-center rounded-xl px-5 py-3 text-sm font-semibold shadow-sm transition hover:opacity-95"
+                  style={{ background: BRAND.burgundy, color: "#fff" }}
+                >
+                  Kostenlose Besichtigung anfragen
+                </Link>
+                <Link
+                  href={`tel:${BRAND.phone.replace(/\s/g, "")}`}
+                  className="inline-flex items-center justify-center rounded-xl px-5 py-3 text-sm font-medium border transition"
+                  style={{ borderColor: BRAND.gold, color: BRAND.graphite }}
+                >
+                  {BRAND.phone} anrufen
+                </Link>
+              </div>
+
+              <p className="mt-4 text-xs opacity-80">
+                Kontakt: {BRAND.email} • {BRAND.phone}
+              </p>
             </div>
 
             {/* Visual */}
             <div className="relative">
               <div
                 className="relative mx-auto aspect-[4/3] w-full overflow-hidden rounded-3xl shadow-sm"
-                style={{
-                  background:
-                    'linear-gradient(180deg, rgba(255,255,255,.65), rgba(255,255,255,.85))',
-                  border: `1px solid ${MINT}`,
-                }}
+                style={{ background: "#fff", border: `1px solid ${BRAND.gold}` }}
               >
-                {/* Заменишь на реальное фото/коллаж */}
                 <Image
-                  src="/images/main-hero.webp"
-                  alt="Entrümpelung in Linz – vorher/nachher Eindruck"
+                  src="/images/antiklinz-1.webp"
+                  alt="Antikhandel in Linz – stimmungsvolle Szene mit historischen Objekten"
                   fill
-                  className="object-cover mix-blend-multiply"
+                  className="object-cover"
                   sizes="(min-width:1024px) 540px, 100vw"
+                  priority
                 />
               </div>
 
-              {/* Badge */}
               <div
-                className="absolute -bottom-4 left-6 rounded-2xl px-4 py-3 text-sm shadow-md"
-                style={{ background: 'white', border: `1px solid ${SAND}`, color: PLUM }}
+                className="absolute -bottom-4 left-6 rounded-2xl px-4 py-2 text-sm shadow-md"
+                style={{ background: "#fff", border: `1px solid ${BRAND.gold}`, color: BRAND.burgundy }}
               >
-                <strong style={{ color: TEAL }}> 150</strong> erfolgreiche Räumungen in OÖ
+                Diskret • Verlässlich • Linz
               </div>
             </div>
           </div>
         </div>
       </section>
-
-      {/* SECTION 2: USP STRIP */}
+            {/* SECTION 2: Leistungen */}
       <section
+        aria-label="Unsere Leistungen"
         className="relative"
-        aria-label="Warum messielinz.at"
-        style={{ background: 'white' }}
+        style={{ background: "#fff" }}
       >
-        <div className="mx-auto w-full max-w-[1150px] px-4 py-10 md:py-12">
-          <div
-            className="grid gap-4 rounded-3xl p-6 md:grid-cols-3"
-            style={{
-              background:
-                `linear-gradient(180deg, rgba(245,230,204,.5), rgba(245,230,204,.7))`,
-              border: `1px solid ${SAND}`,
-            }}
-          >
-            {[
-              {
-                title: 'Respekt & Fingerspitzengefühl',
-                text:
-                  'Wir arbeiten ruhig, sensibel und ohne neugierige Fragen. Persönliche Gegenstände werden sorgfältig gesichert.',
-              },
-              {
-                title: 'Planbar durch Fixpreise',
-                text:
-                  'Transparente Angebote vorab – keine Überraschungen. Termin & Ablauf bleiben für Sie maximal einfach.',
-              },
-              {
-                title: 'Schnell startklar',
-                text:
-                  'Kurzfristige Termine in Linz und Umgebung. Auf Wunsch mit Schlüsselübernahme und Abwicklung in Ihrer Abwesenheit.',
-              },
-            ].map((b, i) => (
-              <div key={i} className="rounded-2xl p-5" style={{ background: 'white' }}>
-                <div className="mb-2 inline-flex items-center gap-2">
-                  <span
-                    className="inline-block h-2.5 w-2.5 rounded-full"
-                    style={{ background: CORAL }}
-                    aria-hidden
-                  />
-                  <h3 className="text-lg font-semibold" style={{ color: PLUM }}>
-                    {b.title}
-                  </h3>
-                </div>
-                <p className="text-sm leading-relaxed" style={{ color: PLUM }}>
-                  {b.text}
-                </p>
-              </div>
-            ))}
+        <div className="mx-auto w-full max-w-[1150px] px-4 py-16 md:py-24">
+          <div className="text-center mb-12">
+            <h2
+              className="text-2xl md:text-3xl font-extrabold"
+              style={{ color: BRAND.burgundy }}
+            >
+              Unsere Leistungen in Linz &amp; Oberösterreich
+            </h2>
+            <p
+              className="mt-3 max-w-2xl mx-auto text-base md:text-lg leading-relaxed"
+              style={{ color: BRAND.graphite }}
+            >
+              Ob <strong>Verlassenschaft</strong>, <strong>Nachlassankauf</strong>,
+              <strong> Entrümpelung</strong> oder der <strong>Ankauf von Antiquitäten</strong> –
+              AntikLinz steht für faire Beratung, klare Abläufe und diskrete Umsetzung.
+            </p>
+          </div>
+
+          <div className="grid gap-6 md:grid-cols-3">
+            {/* Leistung 1 */}
+            <div
+              className="rounded-2xl border p-6 shadow-sm transition hover:shadow-md"
+              style={{ borderColor: BRAND.gold, background: "#fff" }}
+            >
+              <h3 className="text-lg font-semibold mb-2" style={{ color: BRAND.burgundy }}>
+                Verlassenschaften
+              </h3>
+              <p className="text-sm leading-relaxed" style={{ color: BRAND.graphite }}>
+                Wir übernehmen komplette <strong>Verlassenschaften in Linz</strong> –
+                transparent, zuverlässig und respektvoll gegenüber den Erinnerungsstücken.
+              </p>
+            </div>
+
+            {/* Leistung 2 */}
+            <div
+              className="rounded-2xl border p-6 shadow-sm transition hover:shadow-md"
+              style={{ borderColor: BRAND.gold, background: "#fff" }}
+            >
+              <h3 className="text-lg font-semibold mb-2" style={{ color: BRAND.burgundy }}>
+                Nachlassankauf
+              </h3>
+              <p className="text-sm leading-relaxed" style={{ color: BRAND.graphite }}>
+                Ankauf von <strong>Nachlässen und Antiquitäten</strong> wie Silber, Porzellan,
+                Gemälden oder Design-Objekten – sofortige Barzahlung möglich.
+              </p>
+            </div>
+
+            {/* Leistung 3 */}
+            <div
+              className="rounded-2xl border p-6 shadow-sm transition hover:shadow-md"
+              style={{ borderColor: BRAND.gold, background: "#fff" }}
+            >
+              <h3 className="text-lg font-semibold mb-2" style={{ color: BRAND.burgundy }}>
+                Entrümpelung & Räumung
+              </h3>
+              <p className="text-sm leading-relaxed" style={{ color: BRAND.graphite }}>
+                Schnelle und diskrete <strong>Entrümpelung von Wohnungen, Häusern und Kellern</strong> 
+                – fix vereinbart, termintreu und ohne versteckte Kosten.
+              </p>
+            </div>
           </div>
         </div>
       </section>
-
-      {/* SECTION 3: Leistungen-Teaser */}
+          
+      {/* SECTION 3: Antiquitäten Ankauf & Verkauf (визуальная версия) */}
 <section
+  aria-label="Antiquitäten Ankauf und Verkauf in Linz"
   className="relative"
-  aria-label="Unsere Leistungen"
   style={{
+    background: BRAND.base,
     backgroundImage: `
-      radial-gradient(60rem 30rem at 20% 100%, ${MINT}22, transparent),
-      radial-gradient(50rem 20rem at 80% 0%, ${CORAL}11, transparent)
+      radial-gradient(70rem 30rem at -10% 0%, ${BRAND.gold}1A, transparent),
+      radial-gradient(60rem 30rem at 110% 100%, ${BRAND.green}14, transparent)
     `,
   }}
 >
   <div className="mx-auto w-full max-w-[1150px] px-4 py-16 md:py-24">
+    {/* Заголовок */}
     <div className="text-center mb-10">
-      <h2 className="text-2xl md:text-3xl font-semibold" style={{ color: PLUM }}>
-        Unsere Leistungen in Linz & Umgebung
+      <h2
+        className="text-2xl md:text-3xl font-extrabold"
+        style={{ color: BRAND.burgundy }}
+      >
+        Übersiedlung & Antiquitäten Ankauf & Verkauf in Linz
       </h2>
-      <p className="mt-3 max-w-2xl mx-auto text-base leading-relaxed" style={{ color: PLUM }}>
-        Von der Messie-Wohnung bis zur kompletten Nachlassauflösung – wir bieten maßgeschneiderte Lösungen, 
-        respektvoll und effizient umgesetzt.
-      </p>
     </div>
 
-    
-     {/* Сетка услуг из твоего компонента */}
-             <Leistungen />
+    {/* ВИЗУАЛ + ТЕКСТ */}
+    <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
+      {/* БОЛЬШОЕ ИЗОБРАЖЕНИЕ С РАМКОЙ */}
+      <div className="relative">
+        {/* Декоративная подложка */}
+        <div
+          aria-hidden
+          className="absolute -inset-4 rounded-[28px]"
+          style={{
+            background:
+              `linear-gradient(180deg, rgba(255,255,255,.65), rgba(255,255,255,.85))`,
+            filter: "blur(2px)",
+          }}
+        />
+        <div
+  className="relative overflow-hidden rounded-[24px] shadow-lg"
+  style={{
+    border: `1px solid ${BRAND.gold}`,
+    boxShadow: "0 20px 60px rgba(0,0,0,.10), 0 8px 20px rgba(0,0,0,.05)",
+  }}
+>
+  {/* src="https://antiklinz.at/images/main-vid.mp4" */}
+  <video
+    src="http://localhost:3004/images/main-vid.mp4"
+    autoPlay
+    loop
+    muted
+    playsInline
+    className="block h-full w-full object-cover object-left"
+    style={{ aspectRatio: "4 / 3" }}
+  />
+</div>
+
+        {/* акцент-бейдж */}
+        <div
+          className="absolute -bottom-4 left-6 rounded-2xl px-4 py-2 text-sm shadow-md"
+          style={{
+            background: "#fff",
+            border: `1px solid ${BRAND.gold}`,
+            color: BRAND.burgundy,
+          }}
+        >
+          Fachgerechter Abtransport • Möbelankauf
+        </div>
+      </div>
+
+      {/* ТЕКСТ (НЕ МЕНЯЛ СОДЕРЖАНИЕ) */}
+      <div
+        className="max-w-2xl lg:max-w-none text-base md:text-lg leading-relaxed space-y-6"
+        style={{ color: BRAND.graphite }}
+      >
+        <p>
+          AntikLinz ist Ihr verlässlicher Ansprechpartner, wenn es um den
+          <strong> Ankauf und Verkauf von Antiquitäten in Linz</strong> geht. Wir bewerten Möbel,
+          Silber, Porzellan, Uhren, Gemälde und Sammlerstücke mit langjähriger Erfahrung und
+          fachkundigem Blick. Unser Ziel ist es, Ihnen faire Konditionen zu bieten – egal ob Sie
+          einzelne Stücke oder eine komplette Sammlung veräußern möchten.
+        </p>
+
+        <p>
+          Viele unserer Kund:innen aus <strong>Linz und Oberösterreich</strong> schätzen die
+          unkomplizierte Abwicklung: Wir kommen zu einer kostenlosen Besichtigung, prüfen die
+          Objekte direkt vor Ort und unterbreiten ein transparentes Angebot. Durch unsere
+          Spezialisierung im Bereich <strong>Antiquitäten</strong> garantieren wir eine
+          professionelle Einschätzung des tatsächlichen Wertes.
+        </p>
+
+        <p>
+          Neben dem Ankauf kümmern wir uns auch um den <strong>Verkauf von Antiquitäten</strong>.
+          So finden wertvolle Stücke neue Besitzer:innen, die diese Kunstwerke und
+          Erinnerungsstücke weiterhin pflegen. Dadurch tragen wir aktiv dazu bei, dass das
+          kulturelle Erbe in Linz bewahrt und weitergegeben wird.
+        </p>
+
+        <p>
+          Unser Service richtet sich sowohl an Privatpersonen als auch an Erbengemeinschaften,
+          die im Rahmen einer <strong>Verlassenschaft</strong> oder Haushaltsauflösung einen
+          seriösen Partner suchen. Wir arbeiten stets diskret, termintreu und mit einem hohen
+          Maß an Respekt für die Geschichte hinter jedem Objekt.
+        </p>
+
+        <p>
+          Wenn Sie also Antiquitäten kaufen oder verkaufen möchten, sind Sie bei uns in besten
+          Händen. Kontaktieren Sie uns telefonisch unter <strong>{BRAND.phone}</strong> oder per
+          E-Mail unter <strong>{BRAND.email}</strong> und vereinbaren Sie eine kostenlose
+          Besichtigung in Linz oder Umgebung.
+        </p>
+      </div>
+    </div>
+
    
   </div>
 </section>
 
-{/* SECTION 4: Prozess 1–2–3 */}
-<section
-  className="relative"
-  aria-label="Ablauf in drei Schritten"
-  style={{
-    background: 'white',
-  }}
->
-  <div className="mx-auto w-full max-w-[1150px] px-4 py-16 md:py-24">
-    <div className="text-center mb-12">
-      <h2 className="text-2xl md:text-3xl font-semibold" style={{ color: PLUM }}>
-        So läuft es mit messielinz.at
-      </h2>
-      <p className="mt-3 max-w-2xl mx-auto text-base leading-relaxed" style={{ color: PLUM }}>
-        Transparent, einfach und zuverlässig: Unser Ablauf ist klar strukturiert, 
-        damit Sie jederzeit den Überblick behalten. Schritt für Schritt zu einer befreiten Wohnung.
-      </p>
-    </div>
 
-    <div className="grid gap-8 md:grid-cols-3">
-      {/* Step 1 */}
-      <div
-        className="flex flex-col rounded-2xl border p-6 text-center transition hover:shadow-md"
-        style={{ borderColor: SAND, background: 'white' }}
+
+      {/* SECTION 4: Warum AntikLinz */}
+      <section
+        aria-label="Warum AntikLinz"
+        className="relative"
+        style={{
+          backgroundImage: `
+            radial-gradient(60rem 30rem at 10% 0%, ${BRAND.green}11, transparent),
+            radial-gradient(60rem 30rem at 90% 100%, ${BRAND.gold}22, transparent)
+          `,
+        }}
       >
-        <div
-          className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full text-lg font-bold"
-          style={{ background: MINT, color: TEAL }}
-        >
-          1
+        <div className="mx-auto w-full max-w-[1150px] px-4 py-20">
+          <div className="text-center mb-14">
+            <h2
+              className="text-2xl md:text-3xl font-extrabold"
+              style={{ color: BRAND.burgundy }}
+            >
+              Warum AntikLinz?
+            </h2>
+            <p
+              className="mt-3 max-w-2xl mx-auto text-base md:text-lg leading-relaxed"
+              style={{ color: BRAND.graphite }}
+            >
+              Erfahrung, Transparenz und Respekt – drei Werte, die uns auszeichnen.
+              Mit AntikLinz haben Sie einen Partner, der Antiquitäten nicht nur
+              bewertet, sondern deren Geschichte versteht.
+            </p>
+          </div>
+
+          <div className="grid gap-8 md:grid-cols-3">
+            {/* Vorteil 1 */}
+            <div
+              className="relative rounded-3xl p-8 shadow-md transition hover:shadow-xl"
+              style={{ background: "#fff", border: `1px solid ${BRAND.gold}` }}
+            >
+              <div
+                className="absolute -top-5 left-6 rounded-full h-10 w-10 flex items-center justify-center text-lg font-bold shadow"
+                style={{ background: BRAND.burgundy, color: "#fff" }}
+              >
+                1
+              </div>
+              <h3
+                className="mt-6 text-lg font-semibold mb-2"
+                style={{ color: BRAND.burgundy }}
+              >
+                Fachkundige Bewertung
+              </h3>
+              <p className="text-sm leading-relaxed" style={{ color: BRAND.graphite }}>
+                Jahrzehntelange Erfahrung im <strong>Antiquitätenhandel</strong>
+                ermöglicht eine realistische und faire Einschätzung von Wert
+                und Seltenheit.
+              </p>
+            </div>
+
+            {/* Vorteil 2 */}
+            <div
+              className="relative rounded-3xl p-8 shadow-md transition hover:shadow-xl"
+              style={{ background: "#fff", border: `1px solid ${BRAND.gold}` }}
+            >
+              <div
+                className="absolute -top-5 left-6 rounded-full h-10 w-10 flex items-center justify-center text-lg font-bold shadow"
+                style={{ background: BRAND.green, color: "#fff" }}
+              >
+                2
+              </div>
+              <h3
+                className="mt-6 text-lg font-semibold mb-2"
+                style={{ color: BRAND.burgundy }}
+              >
+                Diskrete Abwicklung
+              </h3>
+              <p className="text-sm leading-relaxed" style={{ color: BRAND.graphite }}>
+                Wir arbeiten leise, vertraulich und flexibel – damit die
+                Abwicklung von Verlassenschaften oder Verkäufen stressfrei
+                gelingt.
+              </p>
+            </div>
+
+            {/* Vorteil 3 */}
+            <div
+              className="relative rounded-3xl p-8 shadow-md transition hover:shadow-xl"
+              style={{ background: "#fff", border: `1px solid ${BRAND.gold}` }}
+            >
+              <div
+                className="absolute -top-5 left-6 rounded-full h-10 w-10 flex items-center justify-center text-lg font-bold shadow"
+                style={{ background: BRAND.gold, color: BRAND.graphite }}
+              >
+                3
+              </div>
+              <h3
+                className="mt-6 text-lg font-semibold mb-2"
+                style={{ color: BRAND.burgundy }}
+              >
+                Alles aus einer Hand
+              </h3>
+              <p className="text-sm leading-relaxed" style={{ color: BRAND.graphite }}>
+                Von der ersten Besichtigung bis zur Auszahlung und Übergabe –
+                wir übernehmen alle Schritte, klar strukturiert und
+                transparent.
+              </p>
+            </div>
+          </div>
+
+          {/* CTA */}
+          <div className="mt-16 text-center">
+            <Link
+              href={`tel:${BRAND.phone.replace(/\s/g, "")}`}
+              className="inline-flex items-center justify-center rounded-xl px-6 py-3 text-sm font-semibold shadow-sm transition hover:opacity-95"
+              style={{ background: BRAND.burgundy, color: "#fff" }}
+            >
+              Jetzt kostenlos beraten lassen
+            </Link>
+          </div>
         </div>
-        <h3 className="text-lg font-semibold mb-2" style={{ color: PLUM }}>
-          Kostenlose Besichtigung
-        </h3>
-        <p className="text-sm leading-relaxed" style={{ color: PLUM }}>
-          Wir kommen unverbindlich zu Ihnen nach Linz oder Umgebung. 
-          Gemeinsam besprechen wir, was bleiben soll und was wir für Sie übernehmen.
-        </p>
-      </div>
-
-      {/* Step 2 */}
-      <div
-        className="flex flex-col rounded-2xl border p-6 text-center transition hover:shadow-md"
-        style={{ borderColor: SAND, background: 'white' }}
+      </section>
+            {/* SECTION 5: Kundenstimmen */}
+      <section
+        aria-label="Kundenstimmen"
+        className="relative"
+        style={{
+          background: "white",
+        }}
       >
-        <div
-          className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full text-lg font-bold"
-          style={{ background: CORAL, color: 'white' }}
-        >
-          2
-        </div>
-        <h3 className="text-lg font-semibold mb-2" style={{ color: PLUM }}>
-          Fixpreis-Angebot
-        </h3>
-        <p className="text-sm leading-relaxed" style={{ color: PLUM }}>
-          Direkt nach der Besichtigung erhalten Sie ein transparentes Fixpreis-Angebot. 
-          Ohne versteckte Kosten – fair und verbindlich.
-        </p>
-      </div>
+        <div className="mx-auto w-full max-w-[1150px] px-4 py-20">
+          <div className="text-center mb-12">
+            <h2
+              className="text-2xl md:text-3xl font-extrabold"
+              style={{ color: BRAND.burgundy }}
+            >
+              Stimmen unserer Kund:innen
+            </h2>
+            <p
+              className="mt-3 max-w-2xl mx-auto text-base md:text-lg leading-relaxed"
+              style={{ color: BRAND.graphite }}
+            >
+              Vertrauen entsteht durch Erfahrungen. Hier einige Rückmeldungen von
+              Kund:innen, die uns mit <strong>Antiquitäten Ankäufen</strong>,
+              <strong> Verlassenschaften</strong> und <strong>Entrümpelungen in Linz</strong>
+              betraut haben.
+            </p>
+          </div>
 
-      {/* Step 3 */}
-      <div
-        className="flex flex-col rounded-2xl border p-6 text-center transition hover:shadow-md"
-        style={{ borderColor: SAND, background: 'white' }}
-      >
-        <div
-          className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full text-lg font-bold"
-          style={{ background: PLUM, color: 'white' }}
-        >
-          3
-        </div>
-        <h3 className="text-lg font-semibold mb-2" style={{ color: PLUM }}>
-          Räumung & Übergabe
-        </h3>
-        <p className="text-sm leading-relaxed" style={{ color: PLUM }}>
-          Am vereinbarten Termin führen wir die komplette Räumung professionell durch. 
-          Sie erhalten Ihr Objekt besenrein und termingerecht zurück.
-        </p>
-      </div>
-    </div>
-
-    {/* CTA unterhalb */}
-    <div className="mt-12 text-center">
-      <Link
-        href="https://wa.me/436766135140"
-        className="inline-flex items-center justify-center rounded-xl px-6 py-3 text-sm font-medium shadow-sm transition hover:opacity-95"
-        style={{ background: CORAL, color: 'white' }}
-      >
-        Jetzt kostenlose Besichtigung anfragen
-      </Link>
-    </div>
-  </div>
-</section>
-{/* SECTION 5: Kundenstimmen / Cases */}
-<section
-  className="relative"
-  aria-label="Kundenstimmen und Fallbeispiele"
-  style={{
-    backgroundImage: `
-      radial-gradient(70rem 30rem at 10% 0%, ${MINT}22, transparent),
-      radial-gradient(60rem 25rem at 90% 100%, ${CORAL}11, transparent)
-    `,
-  }}
->
-  <div className="mx-auto w-full max-w-[1150px] px-4 py-16 md:py-24">
-    <div className="text-center mb-10">
-      <h2 className="text-2xl md:text-3xl font-semibold" style={{ color: PLUM }}>
-        Einblicke in unsere Arbeit
-      </h2>
-      <p className="mt-3 max-w-2xl mx-auto text-base leading-relaxed" style={{ color: PLUM }}>
-        Jede Räumung ist anders – doch unser Ansatz bleibt immer gleich: diskret, respektvoll und zuverlässig.
-        Hier ein paar Eindrücke aus unserem Arbeitsalltag.
-      </p>
-    </div>
-
-    {/* Process Fotos */}
-    <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
-      {[
-        { src: '/images/main-1.webp', alt: 'Vorbereitung und Planung vor Ort' },
-        { src: '/images/main-2.webp', alt: 'Sorgfältiges Verpacken von Gegenständen' },
-        { src: '/images/main-3.webp', alt: 'Transport und sichere Abwicklung' },
-        { src: '/images/main-4.webp', alt: 'Übergabe nach abgeschlossener Arbeit' },
-      ].map((p, i) => (
-        <figure key={i} className="relative aspect-[4/3] rounded-2xl overflow-hidden border"
-                style={{ borderColor: SAND, background: 'white' }}>
-          <Image
-            src={p.src}
-            alt={p.alt}
-            fill
-            className="object-cover"
-            sizes="(min-width:1024px) 280px, 100vw"
-          />
-        </figure>
-      ))}
-    </div>
-
-    {/* Testimonials */}
-    <div className="mt-12 text-center mb-8">
-      <h3 className="text-xl md:text-2xl font-semibold" style={{ color: PLUM }}>
-        Stimmen unserer Kund:innen
-      </h3>
-    </div>
-    <div className="grid gap-6 md:grid-cols-3">
-      {[
-        {
-          name: 'Anonyme Kundin',
-          quote:
-            'Sehr einfühlsames Team – alles wurde professionell umgesetzt, ohne Stress und mit viel Respekt.',
-          rating: 5,
-        },
-        {
-          name: 'Privatkunde aus Oberösterreich',
-          quote:
-            'Klare Kommunikation, faire Preise und termingerechte Übergabe. Absolut empfehlenswert.',
-          rating: 5,
-        },
-        {
-          name: 'Familie aus Linz',
-          quote:
-            'Diskret, zuverlässig und mit viel Verständnis für unsere Situation. Wir sind sehr dankbar.',
-          rating: 5,
-        },
-      ].map((t, i) => (
-        <figure key={i} className="rounded-2xl border p-6 h-full flex flex-col"
-                style={{ borderColor: SAND, background: 'white' }}>
-          <div className="mb-3 flex items-center gap-1" aria-label={`${t.rating} von 5 Sternen`}>
-            {Array.from({ length: 5 }).map((_, idx) => (
-              <span key={idx} className="inline-block h-3 w-3 rounded-full"
-                    style={{ background: idx < t.rating ? CORAL : `${SAND}` }} />
+          {/* Grid mit Testimonials */}
+          <div className="grid gap-6 md:grid-cols-3">
+            {[
+              {
+                name: "Familie H., Linz",
+                quote:
+                  "Sehr professionell – schnelle Abwicklung der Verlassenschaft, alles wurde transparent erklärt. Besonders die faire Bewertung der Antiquitäten hat uns überzeugt.",
+                rating: 5,
+              },
+              {
+                name: "Herr K., Oberösterreich",
+                quote:
+                  "Diskret, freundlich und zuverlässig. Die Entrümpelung wurde pünktlich erledigt und die Auszahlung erfolgte sofort. Absolut empfehlenswert!",
+                rating: 5,
+              },
+              {
+                name: "Frau M., Linz",
+                quote:
+                  "Vom ersten Kontakt bis zur Übergabe ein gutes Gefühl. Respektvoller Umgang mit Erinnerungsstücken und ein tolles Team.",
+                rating: 5,
+              },
+            ].map((t, i) => (
+              <figure
+                key={i}
+                className="rounded-2xl border p-6 flex flex-col shadow-sm"
+                style={{ borderColor: BRAND.gold, background: "#fff" }}
+              >
+                <div className="mb-3 flex items-center gap-1" aria-label={`${t.rating} von 5 Sternen`}>
+                  {Array.from({ length: 5 }).map((_, idx) => (
+                    <span
+                      key={idx}
+                      className="inline-block h-3 w-3 rounded-full"
+                      style={{
+                        background: idx < t.rating ? BRAND.burgundy : `${BRAND.gold}44`,
+                      }}
+                    />
+                  ))}
+                </div>
+                <blockquote className="text-sm leading-relaxed flex-1" style={{ color: BRAND.graphite }}>
+                  “{t.quote}”
+                </blockquote>
+                <figcaption
+                  className="mt-4 text-xs font-medium"
+                  style={{ color: BRAND.green }}
+                >
+                  {t.name}
+                </figcaption>
+              </figure>
             ))}
           </div>
-          <blockquote className="text-sm leading-relaxed" style={{ color: PLUM }}>
-            “{t.quote}”
-          </blockquote>
-          <figcaption className="mt-4 text-xs font-medium" style={{ color: TEAL }}>
-            {t.name}
-          </figcaption>
-        </figure>
-      ))}
-    </div>
-  </div>
 
-  {/* SEO: AggregateRating/Review (пример, можно расширить) */}
-  <script
-    type="application/ld+json"
-    dangerouslySetInnerHTML={{
-      __html: JSON.stringify({
-        '@context': 'https://schema.org',
-        '@type': 'LocalBusiness',
-        name: 'messielinz.at',
-        url: 'https://messielinz.at',
-        areaServed: 'Linz, Oberösterreich',
-        aggregateRating: {
-          '@type': 'AggregateRating',
-          ratingValue: '5.0',
-          reviewCount: '3',
-        },
-        review: [
-          {
-            '@type': 'Review',
-            reviewRating: { '@type': 'Rating', ratingValue: '5' },
-            author: { '@type': 'Person', name: 'Frau K.' },
-            reviewBody:
-              'Sehr einfühlsam und zuverlässig. Alles wurde wie besprochen erledigt – ich musste mich um nichts kümmern.',
-          },
-          {
-            '@type': 'Review',
-            reviewRating: { '@type': 'Rating', ratingValue: '5' },
-            author: { '@type': 'Person', name: 'Herr M.' },
-            reviewBody:
-              'Besichtigung, Fixpreis, Termin – und pünktliche Übergabe. Genau so stellt man sich das vor.',
-          },
-          {
-            '@type': 'Review',
-            reviewRating: { '@type': 'Rating', ratingValue: '5' },
-            author: { '@type': 'Person', name: 'Familie R.' },
-            reviewBody:
-              'Diskrete Abwicklung mit Schlüsselübernahme. Fotodokumentation und klare Kommunikation – top!',
-          },
-        ],
-      }),
-    }}
-  />
-</section>
-      {/* SECTION: SEO Textblock */}
+          {/* SEO JSON-LD für Reviews */}
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify({
+                "@context": "https://schema.org",
+                "@type": "LocalBusiness",
+                name: "AntikLinz",
+                url: "https://antiklinz.at",
+                telephone: BRAND.phone,
+                aggregateRating: {
+                  "@type": "AggregateRating",
+                  ratingValue: "5",
+                  reviewCount: "3",
+                },
+                review: [
+                  {
+                    "@type": "Review",
+                    reviewRating: { "@type": "Rating", ratingValue: "5" },
+                    author: { "@type": "Person", name: "Familie H., Linz" },
+                    reviewBody:
+                      "Sehr professionell – schnelle Abwicklung der Verlassenschaft, faire Bewertung der Antiquitäten.",
+                  },
+                  {
+                    "@type": "Review",
+                    reviewRating: { "@type": "Rating", ratingValue: "5" },
+                    author: { "@type": "Person", name: "Herr K., Oberösterreich" },
+                    reviewBody:
+                      "Diskret, freundlich und zuverlässig. Entrümpelung pünktlich erledigt, sofortige Auszahlung.",
+                  },
+                  {
+                    "@type": "Review",
+                    reviewRating: { "@type": "Rating", ratingValue: "5" },
+                    author: { "@type": "Person", name: "Frau M., Linz" },
+                    reviewBody:
+                      "Respektvoller Umgang mit Erinnerungsstücken und ein tolles Team.",
+                  },
+                ],
+              }),
+            }}
+          />
+        </div>
+      </section>
+            {/* SECTION 6: Kontakt */}
       <section
+        aria-label="Kontakt und Anfrage"
         className="relative"
-        aria-label="SEO Text Messie & Entrümpelung Linz"
-        style={{ background: 'white' }}
+        style={{
+          backgroundImage: `
+            radial-gradient(60rem 30rem at 0% 0%, ${BRAND.gold}22, transparent),
+            radial-gradient(60rem 30rem at 100% 100%, ${BRAND.green}11, transparent)
+          `,
+        }}
       >
-        <div className="mx-auto w-full max-w-[1150px] px-4 py-16 md:py-20">
-          <h2 className="text-2xl md:text-3xl font-semibold mb-6 text-center" style={{ color: PLUM }}>
-            Messie &amp; Entrümpelung in Linz — diskret, respektvoll, ergebnisorientiert
-          </h2>
-
-          <div className="max-w-4xl mx-auto text-base md:text-lg leading-relaxed" style={{ color: PLUM }}>
-            <p className="mb-6">
-              Wer in Linz nach professioneller Unterstützung bei einer <strong>Messie Entrümpelung</strong>
-              oder einer klassischen Wohnungsauflösung sucht, benötigt einen Partner, der mit Erfahrung,
-              Feingefühl und einem klaren System arbeitet. Unsere <strong>Entrümpelungsfirma in Linz</strong>
-              begleitet Sie zuverlässig und sorgt dafür, dass jeder Schritt planbar und transparent bleibt.
-              Von der ersten Besichtigung bis zur finalen Übergabe können Sie sich auf eine ergebnisorientierte
-              Abwicklung verlassen.
+        <div className="mx-auto w-full max-w-[1150px] px-4 py-20">
+          <div className="text-center mb-10">
+            <h2
+              className="text-2xl md:text-3xl font-extrabold"
+              style={{ color: BRAND.burgundy }}
+            >
+              Kontakt &amp; kostenlose Besichtigung
+            </h2>
+            <p
+              className="mt-3 max-w-2xl mx-auto text-base md:text-lg leading-relaxed"
+              style={{ color: BRAND.graphite }}
+            >
+              Schreiben Sie uns oder rufen Sie direkt an – wir melden uns rasch und diskret
+              aus Linz. Antiquitäten Ankauf, Nachlassauflösung &amp; Entrümpelung aus einer Hand.
             </p>
+          </div>
 
-            <p className="mb-6">
-              Als <strong>Entrümpelungsdienst in Linz</strong> übernehmen wir sowohl kleine als auch große
-              Aufträge. Dazu gehören nicht nur klassische <strong>Wohnungsauflösungen in Linz</strong>,
-              sondern auch Teilräumungen, Keller- und Dachbodenprojekte oder komplette Haushaltsauflösungen.
-              Besonders im sensiblen Bereich der <strong>Messie Entrümpelungen</strong> legen wir großen Wert
-              auf Diskretion und Respekt, damit der gesamte Prozess für alle Beteiligten so angenehm wie
-              möglich verläuft.
-            </p>
+          {/* Kontaktkarte */}
+          <div
+            className="mx-auto max-w-2xl rounded-3xl p-6 md:p-8 shadow-sm text-center"
+            style={{ background: "#fff", border: `1px solid ${BRAND.gold}` }}
+          >
+            <ul className="space-y-3 text-sm md:text-base" style={{ color: BRAND.graphite }}>
+              <li>
+                <strong style={{ color: BRAND.burgundy }}>E-Mail:</strong>{" "}
+                <a href="mailto:info@antiklinz.at" className="underline hover:opacity-90">
+                  info@antiklinz.at
+                </a>
+              </li>
+              <li>
+                <strong style={{ color: BRAND.burgundy }}>Telefon:</strong>{" "}
+                <a href="tel:+436767202623" className="underline hover:opacity-90">
+                  +43 676 720 26 23
+                </a>
+              </li>
+              <li>
+                <strong style={{ color: BRAND.burgundy }}>Standort:</strong> Linz, Oberösterreich
+              </li>
+            </ul>
 
-            <p className="mb-6">
-              Unser <strong>Entrümpelungsservice in Linz</strong> zeichnet sich durch klare Absprachen,
-              verbindliche Fixpreise und eine termintreue Durchführung aus. So behalten Sie jederzeit die
-              volle Kontrolle über den Ablauf und wissen genau, wann und in welchem Zustand Sie die Räume
-              zurückerhalten. Auch die <strong>Sperrmüllabholung in Linz</strong> ist Teil unseres Angebots,
-              sodass Sie alles aus einer Hand erhalten und sich nicht um zusätzliche Organisation kümmern müssen.
-            </p>
+            <div className="mt-6 flex flex-wrap justify-center gap-3">
+              <a
+                href="mailto:info@antiklinz.at?subject=Anfrage%20AntikLinz"
+                className="inline-flex items-center justify-center rounded-xl px-6 py-3 text-sm font-semibold shadow-sm transition hover:opacity-95"
+                style={{ background: BRAND.burgundy, color: "#fff" }}
+              >
+                Per E-Mail anfragen
+              </a>
+              <a
+                href="tel:+436767202623"
+                className="inline-flex items-center justify-center rounded-xl px-6 py-3 text-sm font-medium border transition"
+                style={{ borderColor: BRAND.gold, color: BRAND.graphite }}
+              >
+                Jetzt anrufen
+              </a>
+            </div>
+          </div>
 
-            <p>
-              Mit unserer langjährigen Erfahrung und einem eingespielten Team stehen wir Ihnen in jeder Phase
-              unterstützend zur Seite. Ob es sich um eine kurzfristige Anfrage handelt oder um ein komplexes
-              Projekt mit mehreren Räumen: Wir finden gemeinsam mit Ihnen die passende Lösung. Damit werden
-              unsere <strong>Wohnungsauflösungen und Entrümpelungen in Linz</strong> zu einem Prozess, der
-              nicht nur professionell umgesetzt, sondern auch menschlich begleitet wird.
-            </p>
+          {/* kurzer SEO-Absatz */}
+          <div
+            className="mt-10 max-w-3xl mx-auto text-sm leading-relaxed text-center"
+            style={{ color: BRAND.graphite }}
+          >
+            AntikLinz – Ihr Ansprechpartner in Linz für <strong>Antiquitäten Ankauf</strong>,
+            <strong> Verlassenschaften</strong> und <strong>Entrümpelung</strong>. Kontaktieren Sie
+            uns telefonisch unter <a href="tel:+436767202623" className="underline">+43&nbsp;676&nbsp;720&nbsp;26&nbsp;23</a>{" "}
+            oder per E-Mail an{" "}
+            <a href="mailto:info@antiklinz.at" className="underline">info@antiklinz.at</a>.
           </div>
         </div>
       </section>
 
-
-
-
-
-{/* SECTION 6: FAQ + CTA */}
+      {/* SECTION X: SEO – Ankauf Antiquitäten Möbel (Bild rechts, Text links) */}
 <section
+  aria-label="Ankauf von Antiquitäten und Möbeln in Linz"
   className="relative"
-  aria-label="Häufige Fragen und Kontakt"
   style={{
+    background: "#fff",
     backgroundImage: `
-      radial-gradient(60rem 30rem at 15% 0%, ${MINT}22, transparent),
-      radial-gradient(60rem 30rem at 85% 100%, ${CORAL}11, transparent)
+      radial-gradient(60rem 30rem at -10% 0%, ${BRAND.gold}14, transparent),
+      radial-gradient(60rem 30rem at 110% 100%, ${BRAND.green}0f, transparent)
     `,
   }}
 >
   <div className="mx-auto w-full max-w-[1150px] px-4 py-16 md:py-24">
+    <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
+      {/* TEXT LINKS (SEO) */}
+      <div className="max-w-2xl text-base md:text-lg leading-relaxed space-y-6" style={{ color: BRAND.graphite }}>
+        <h2 className="text-2xl md:text-3xl font-extrabold" style={{ color: BRAND.burgundy }}>
+          Ankauf von Antiquitäten &amp; Möbeln in Linz
+        </h2>
+
+        <p>
+          AntikLinz ist Ihre seriöse Adresse für den <strong>Ankauf Antiquitäten Möbel</strong> in Linz
+          und Oberösterreich. Wir bewerten antike Möbel, Wohnaccessoires und Sammlerstücke fachkundig –
+          von Biedermeier-Kommoden über Gründerzeit-Schränke bis hin zu Vintage-Designklassikern. Dank
+          transparenter Konditionen und schneller Abwicklung verkaufen Sie bequem und sicher.
+        </p>
+
+        <p>
+          Ob einzelne Stücke oder eine komplette Einrichtung: Wir kommen zur kostenlosen Besichtigung,
+          prüfen Zustand, Originalität und Provenienz und erstellen ein faires Angebot. Besonders gefragt
+          sind gut erhaltene Tische, Stühle, Sekretäre, Vitrinen, Truhen sowie passende Kleinmöbel. Auch
+          Kombinationen mit <strong>Silber, Porzellan, Uhren</strong> und <strong>Gemälden</strong> sind
+          möglich – alles aus einer Hand.
+        </p>
+
+        <p>
+          Unser Schwerpunkt liegt auf Qualität und Authentizität. So finden antike Möbel aus Linz neue
+          Besitzer:innen, die deren Charakter schätzen – und Sie profitieren von einer verlässlichen,
+          diskreten Abwicklung mit klaren Fixpreisen. Auf Wunsch übernehmen wir die Abholung direkt vor Ort.
+        </p>
+
+        <ul className="grid gap-2 text-sm md:text-base">
+          {[
+            "Kostenlose Besichtigung in Linz & Umgebung",
+            "Faire Bewertung: Zustand, Alter, Stil, Nachfrage",
+            "Sofortige Auszahlung beim Ankauf möglich",
+            "Diskret, termintreu, ohne versteckte Kosten",
+          ].map((t) => (
+            <li key={t} className="flex items-center gap-2">
+              <span className="inline-block h-2 w-2 rounded-full" style={{ background: BRAND.green }} aria-hidden />
+              {t}
+            </li>
+          ))}
+        </ul>
+
+        <p>
+          Interessiert? Kontakt unter <strong>{BRAND.email}</strong> oder telefonisch
+          unter <strong>{BRAND.phone}</strong>. Antike Möbel verkaufen in Linz – einfach, sicher und
+          mit Blick für den wahren Wert.
+        </p>
+      </div>
+
+      {/* BILD RECHTS */}
+      <div className="relative lg:order-last">
+        <div
+          aria-hidden
+          className="absolute -inset-4 rounded-[28px]"
+          style={{ background: "linear-gradient(180deg, rgba(255,255,255,.6), rgba(255,255,255,.85))", filter: "blur(2px)" }}
+        />
+        <div
+          className="relative overflow-hidden rounded-[24px] shadow-lg"
+          style={{ border: `1px solid ${BRAND.gold}`, boxShadow: "0 20px 60px rgba(0,0,0,.10), 0 8px 20px rgba(0,0,0,.05)" }}
+        >
+          {/* Замените путь на вашу третью картинку */}
+          <img
+            src="/images/antiklinz-3.webp"
+            alt="Antike Möbel in Linz – Kommode, Vitrine und Sessel in klassischem Ambiente"
+            className="block h-full w-full object-cover"
+            style={{ aspectRatio: "4 / 3" }}
+          />
+        </div>
+        <div
+          className="absolute -bottom-4 left-6 rounded-2xl px-4 py-2 text-sm shadow-md"
+          style={{ background: "#fff", border: `1px solid ${BRAND.gold}`, color: BRAND.burgundy }}
+        >
+          Antike Möbel • Kostenlose Bewertung • Faire Angebote
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+      {/* SECTION 7: FAQ */}
+<section
+  aria-label="Häufige Fragen (FAQ)"
+  className="relative"
+  style={{
+    backgroundImage: `
+      radial-gradient(60rem 30rem at 12% 0%, ${BRAND.gold}22, transparent),
+      radial-gradient(60rem 30rem at 88% 100%, ${BRAND.green}11, transparent)
+    `,
+  }}
+>
+  <div className="mx-auto w-full max-w-[1150px] px-4 py-20">
     <div className="text-center mb-10">
-      <h2 className="text-2xl md:text-3xl font-semibold" style={{ color: PLUM }}>
-        FAQ – schnell erklärt
+      <h2
+        className="text-2xl md:text-3xl font-extrabold"
+        style={{ color: BRAND.burgundy }}
+      >
+        Häufige Fragen (FAQ)
       </h2>
-      <p className="mt-3 max-w-2xl mx-auto text-base leading-relaxed" style={{ color: PLUM }}>
-        Die wichtigsten Fragen rund um Messie Hilfe, Räumungen und Nachlassauflösungen in Linz – kurz und klar beantwortet.
+      <p
+        className="mt-3 max-w-2xl mx-auto text-base md:text-lg leading-relaxed"
+        style={{ color: BRAND.graphite }}
+      >
+        Kurz und klar beantwortet: Antiquitäten, Verlassenschaften und Entrümpelung in Linz &amp; Oberösterreich.
       </p>
     </div>
 
-    {/* FAQ List */}
     <div className="grid gap-4 md:gap-6">
       {[
         {
-          q: 'Wie diskret arbeitet ihr?',
-          a: 'Sehr diskret: neutrale Kleidung, keine auffälligen Beschriftungen, ruhiges Arbeiten. Auf Wunsch mit Schlüsselübernahme und Abwicklung ohne Ihre Anwesenheit.',
+          q: "Kauft AntikLinz Antiquitäten direkt an?",
+          a: "Ja. Wir bewerten u. a. Silber, Porzellan, Gemälde, Uhren, Möbel und Design-Objekte und unterbreiten ein faires Angebot – auf Wunsch mit sofortiger Auszahlung.",
         },
         {
-          q: 'Gibt es eine kostenlose Besichtigung?',
-          a: 'Ja. Wir kommen unverbindlich in Linz & Umgebung, besprechen den Umfang und erstellen ein Fixpreis-Angebot.',
+          q: "Bietet ihr eine kostenlose Besichtigung in Linz an?",
+          a: "Ja, die Erstbesichtigung ist kostenlos und unverbindlich. Wir prüfen vor Ort und nennen Ihnen einen transparenten Fixpreis.",
         },
         {
-          q: 'Wie läuft eine Räumung ab?',
-          a: 'Nach der Besichtigung erhalten Sie den Fixpreis. Am Termin setzen wir alles strukturiert um und übergeben das Objekt termingerecht besenrein.',
+          q: "Wie diskret arbeitet ihr bei Verlassenschaften?",
+          a: "Sehr diskret: neutrale Auftretensweise, leises Arbeiten, klare Absprachen. Auf Wunsch mit Schlüsselübernahme und Abwicklung ohne Ihre Anwesenheit.",
         },
         {
-          q: 'Welche Bereiche deckt ihr ab?',
-          a: 'Linz und umliegende Regionen in Oberösterreich. Bei Bedarf prüfen wir auch angrenzende Orte – einfach anfragen.',
+          q: "Was unterscheidet Ankauf von Kommission?",
+          a: "Beim Ankauf zahlen wir sofort und übernehmen das Risiko. Kommission bedeutet Verkauf in Ihrem Namen. Wir beraten, welches Modell sich für Sie rechnet.",
         },
         {
-          q: 'Was passiert mit persönlichen Erinnerungsstücken?',
-          a: 'Was Ihnen wichtig ist, bleibt. Wir sichern dokumentiert, legen Fundstücke separat ab und stimmen Entscheidungen mit Ihnen ab.',
+          q: "Welche Regionen deckt ihr ab?",
+          a: "Linz und ganz Oberösterreich. Grenznahe Orte nach Rücksprache möglich – einfach kurz anrufen oder eine E-Mail senden.",
         },
         {
-          q: 'Wie schnell ist ein Termin möglich?',
-          a: 'Kurzfristig. Häufig innerhalb weniger Tage – abhängig vom Umfang. Melden Sie sich, wir finden den nächsten passenden Slot.',
+          q: "Übernehmt ihr auch Teilräumungen (Keller/Dachboden)?",
+          a: "Ja. Von einzelnen Räumen bis zur kompletten Haushaltsauflösung. Termin- und Preiszusage vor Start.",
         },
         {
-          q: 'Wie transparent sind die Preise?',
-          a: 'Komplett transparent: Sie erhalten vor Start einen verbindlichen Fixpreis. Keine Zusatzkosten ohne vorherige Rücksprache.',
+          q: "Wie schnell kann ein Termin stattfinden?",
+          a: "Kurzfristig – je nach Umfang oft innerhalb weniger Tage. Rufen Sie uns an: +43 676 720 26 23.",
         },
         {
-          q: 'Übernehmt ihr auch Nachlass / Verlassenschaft?',
-          a: 'Ja, respektvoll und strukturiert. Wir unterstützen Angehörige mit klarer Planung, Dokumentation und sauberer Übergabe.',
+          q: "Erhalte ich eine schriftliche Bestätigung/Quittung?",
+          a: "Ja. Sie bekommen auf Wunsch eine schriftliche Bestätigung, Beleg über Ankauf sowie eine klare Leistungsübersicht.",
         },
       ].map((item, i) => (
         <details
           key={i}
           className="group rounded-2xl border p-4 md:p-5 transition"
-          style={{ borderColor: SAND, background: 'white' }}
+          style={{ borderColor: BRAND.gold, background: "#fff" }}
         >
           <summary className="flex cursor-pointer list-none items-center justify-between gap-4">
-            <h3 className="text-base md:text-lg font-semibold" style={{ color: PLUM }}>
+            <h3 className="text-base md:text-lg font-semibold" style={{ color: BRAND.burgundy }}>
               {item.q}
             </h3>
             <span
               className="inline-flex h-6 w-6 items-center justify-center rounded-full text-sm transition group-open:rotate-45"
-              style={{ background: `${MINT}66`, color: TEAL }}
+              style={{ background: `${BRAND.gold}55`, color: BRAND.graphite }}
               aria-hidden
             >
               +
             </span>
           </summary>
-          <p className="mt-3 text-sm md:text-base leading-relaxed" style={{ color: PLUM }}>
+          <p className="mt-3 text-sm md:text-base leading-relaxed" style={{ color: BRAND.graphite }}>
             {item.a}
           </p>
         </details>
       ))}
     </div>
 
-    {/* CTA Panel */}
-    <div
-      className="mt-12 rounded-3xl p-6 md:p-8 text-center shadow-sm"
-      style={{
-        background:
-          `linear-gradient(180deg, rgba(255,255,255,.9), rgba(245,230,204,.95))`,
-        border: `1px solid ${SAND}`,
+    {/* SEO: FAQPage JSON-LD */}
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{
+        __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: [
+            {
+              "@type": "Question",
+              name: "Kauft AntikLinz Antiquitäten direkt an?",
+              acceptedAnswer: {
+                "@type": "Answer",
+                text:
+                  "Ja. Wir bewerten u. a. Silber, Porzellan, Gemälde, Uhren, Möbel und Design-Objekte und unterbreiten ein faires Angebot – auf Wunsch mit sofortiger Auszahlung.",
+              },
+            },
+            {
+              "@type": "Question",
+              name: "Bietet ihr eine kostenlose Besichtigung in Linz an?",
+              acceptedAnswer: {
+                "@type": "Answer",
+                text:
+                  "Ja, die Erstbesichtigung ist kostenlos und unverbindlich. Wir prüfen vor Ort und nennen Ihnen einen transparenten Fixpreis.",
+              },
+            },
+            {
+              "@type": "Question",
+              name: "Wie diskret arbeitet ihr bei Verlassenschaften?",
+              acceptedAnswer: {
+                "@type": "Answer",
+                text:
+                  "Sehr diskret: neutrale Auftretensweise, leises Arbeiten, klare Absprachen. Auf Wunsch mit Schlüsselübernahme und Abwicklung ohne Ihre Anwesenheit.",
+              },
+            },
+            {
+              "@type": "Question",
+              name: "Was unterscheidet Ankauf von Kommission?",
+              acceptedAnswer: {
+                "@type": "Answer",
+                text:
+                  "Beim Ankauf zahlen wir sofort und übernehmen das Risiko. Kommission bedeutet Verkauf in Ihrem Namen. Wir beraten, welches Modell sich für Sie rechnet.",
+              },
+            },
+            {
+              "@type": "Question",
+              name: "Welche Regionen deckt ihr ab?",
+              acceptedAnswer: {
+                "@type": "Answer",
+                text:
+                  "Linz und ganz Oberösterreich. Grenznahe Orte nach Rücksprache möglich – einfach kurz anrufen oder eine E-Mail senden.",
+              },
+            },
+            {
+              "@type": "Question",
+              name: "Übernehmt ihr auch Teilräumungen (Keller/Dachboden)?",
+              acceptedAnswer: {
+                "@type": "Answer",
+                text:
+                  "Ja. Von einzelnen Räumen bis zur kompletten Haushaltsauflösung. Termin- und Preiszusage vor Start.",
+              },
+            },
+            {
+              "@type": "Question",
+              name: "Wie schnell kann ein Termin stattfinden?",
+              acceptedAnswer: {
+                "@type": "Answer",
+                text:
+                  "Kurzfristig – je nach Umfang oft innerhalb weniger Tage.",
+              },
+            },
+            {
+              "@type": "Question",
+              name: "Erhalte ich eine schriftliche Bestätigung/Quittung?",
+              acceptedAnswer: {
+                "@type": "Answer",
+                text:
+                  "Ja. Sie bekommen auf Wunsch eine schriftliche Bestätigung, Beleg über Ankauf sowie eine klare Leistungsübersicht.",
+              },
+            },
+          ],
+        }),
       }}
-    >
-      <h3 className="text-xl md:text-2xl font-semibold" style={{ color: PLUM }}>
-        Bereit für einen Neuanfang in Linz?
-      </h3>
-      <p className="mt-2 max-w-2xl mx-auto text-base leading-relaxed" style={{ color: PLUM }}>
-        Kostenlose Besichtigung, Fixpreis und termingerechte Übergabe – diskret und unkompliziert.
-      </p>
-      <div className="mt-5 flex flex-wrap items-center justify-center gap-3">
-        <Link
-          href="https://wa.me/436766135140"
-          className="inline-flex items-center justify-center rounded-xl px-6 py-3 text-sm font-medium shadow-sm transition hover:opacity-95"
-          style={{ background: CORAL, color: 'white' }}
-        >
-          Jetzt kostenlose Besichtigung anfragen
-        </Link>
-        <Link
-          href="tel:+436766135140"
-          className="inline-flex items-center justify-center rounded-xl px-6 py-3 text-sm font-medium border transition"
-          style={{ borderColor: MINT, color: TEAL }}
-        >
-          +436766135140 anrufen
-        </Link>
-      </div>
-    </div>
+    />
   </div>
-
-  {/* SEO: FAQPage JSON-LD */}
-  <script
-    type="application/ld+json"
-    dangerouslySetInnerHTML={{
-      __html: JSON.stringify({
-        '@context': 'https://schema.org',
-        '@type': 'FAQPage',
-        mainEntity: [
-          {
-            '@type': 'Question',
-            name: 'Wie diskret arbeitet ihr?',
-            acceptedAnswer: {
-              '@type': 'Answer',
-              text:
-                'Sehr diskret: neutrale Kleidung, keine auffälligen Beschriftungen, ruhiges Arbeiten. Auf Wunsch mit Schlüsselübernahme und Abwicklung ohne Ihre Anwesenheit.',
-            },
-          },
-          {
-            '@type': 'Question',
-            name: 'Gibt es eine kostenlose Besichtigung?',
-            acceptedAnswer: {
-              '@type': 'Answer',
-              text:
-                'Ja. Wir kommen unverbindlich in Linz & Umgebung, besprechen den Umfang und erstellen ein Fixpreis-Angebot.',
-            },
-          },
-          {
-            '@type': 'Question',
-            name: 'Wie läuft eine Räumung ab?',
-            acceptedAnswer: {
-              '@type': 'Answer',
-              text:
-                'Nach der Besichtigung erhalten Sie den Fixpreis. Am Termin setzen wir alles strukturiert um und übergeben das Objekt termingerecht besenrein.',
-            },
-          },
-          {
-            '@type': 'Question',
-            name: 'Welche Bereiche deckt ihr ab?',
-            acceptedAnswer: {
-              '@type': 'Answer',
-              text:
-                'Linz und umliegende Regionen in Oberösterreich. Bei Bedarf prüfen wir auch angrenzende Orte – einfach anfragen.',
-            },
-          },
-          {
-            '@type': 'Question',
-            name: 'Was passiert mit persönlichen Erinnerungsstücken?',
-            acceptedAnswer: {
-              '@type': 'Answer',
-              text:
-                'Was Ihnen wichtig ist, bleibt. Wir sichern dokumentiert, legen Fundstücke separat ab und stimmen Entscheidungen mit Ihnen ab.',
-            },
-          },
-          {
-            '@type': 'Question',
-            name: 'Wie schnell ist ein Termin möglich?',
-            acceptedAnswer: {
-              '@type': 'Answer',
-              text:
-                'Kurzfristig. Häufig innerhalb weniger Tage – abhängig vom Umfang.',
-            },
-          },
-          {
-            '@type': 'Question',
-            name: 'Wie transparent sind die Preise?',
-            acceptedAnswer: {
-              '@type': 'Answer',
-              text:
-                'Komplett transparent: Sie erhalten vor Start einen verbindlichen Fixpreis. Keine Zusatzkosten ohne vorherige Rücksprache.',
-            },
-          },
-          {
-            '@type': 'Question',
-            name: 'Übernehmt ihr auch Nachlass / Verlassenschaft?',
-            acceptedAnswer: {
-              '@type': 'Answer',
-              text:
-                'Ja, respektvoll und strukturiert. Wir unterstützen Angehörige mit klarer Planung, Dokumentation und sauberer Übergabe.',
-            },
-          },
-        ],
-      }),
-    }}
-  />
 </section>
+
+
+
+      
+
+
+           
+
+
 
     </main>
   );

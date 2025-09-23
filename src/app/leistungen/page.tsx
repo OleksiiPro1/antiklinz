@@ -1,29 +1,31 @@
-import Link from 'next/link';
-import Leistungen from '../components/Leistungen';
+// app/leistungen/page.tsx
+import Link from "next/link";
+import Leistungen from "../components/Leistungen";
 
-const PLUM = '#4A235A';
-const CORAL = '#FF6F61';
-const MINT  = '#A8E6CF';
-const SAND  = '#F5E6CC';
-const TEAL  = '#006D77';
+// AntikLinz palette
+const BURGUNDY = "#7B2E2E";
+const GOLD     = "#C2A14D";
+const GREEN    = "#2E4B3C";
+const BASE     = "#F7F3ED";
+const GRAPHITE = "#2B2B2B";
 
 export const metadata = {
-  title: 'Leistungen in Linz – Messie Hilfe & Räumungen | messielinz.at',
+  title: "Leistungen in Linz – Verlassenschaften, Nachlassankauf & Entrümpelung | AntikLinz",
   description:
-    'Messie Hilfe, Räumungen und Wohnungsauflösungen in Linz & Umgebung – diskret, planbar und mit Fixpreis. Kostenlose Besichtigung und termingerechte Übergabe.',
+    "AntikLinz: Leistungen in Linz & Oberösterreich – Verlassenschaften, Nachlassankauf, Entrümpelung und Ankauf von Antiquitäten. Kostenlose Besichtigung, Fixpreise, diskret und termintreu.",
 };
 
 export default function LeistungenPage() {
   return (
-    <main id="main">
+    <main id="main" style={{ background: BASE, color: GRAPHITE }}>
       {/* HERO */}
       <section
         className="relative"
         aria-label="Leistungen in Linz"
         style={{
           backgroundImage: `
-            radial-gradient(90rem 40rem at 10% -20%, ${MINT}33, transparent),
-            radial-gradient(80rem 50rem at 110% 60%, ${CORAL}22, transparent)
+            radial-gradient(90rem 40rem at 10% -20%, ${GOLD}22, transparent),
+            radial-gradient(80rem 50rem at 110% 60%, ${GREEN}18, transparent)
           `,
         }}
       >
@@ -31,37 +33,38 @@ export default function LeistungenPage() {
           <div className="text-center max-w-3xl mx-auto">
             <span
               className="inline-flex items-center rounded-full px-3 py-1 text-xs md:text-sm"
-              style={{ background: `${MINT}55`, color: TEAL }}
+              style={{ background: `${GREEN}22`, color: GREEN, border: `1px solid ${GOLD}55` }}
             >
-              Linz & Umgebung • kostenlose Besichtigung
+              Linz &amp; Oberösterreich • kostenlose Besichtigung
             </span>
 
             <h1
-              className="mt-4 text-3xl md:text-5xl font-semibold leading-tight"
-              style={{ color: PLUM }}
+              className="mt-4 text-3xl md:text-5xl font-extrabold leading-tight"
+              style={{ color: BURGUNDY }}
             >
-              Leistungen in Linz – Messie Hilfe &amp; Räumungen
+              Leistungen in Linz – Verlassenschaften, Nachlassankauf &amp; Entrümpelung
             </h1>
 
-            <p className="mt-4 text-base md:text-lg leading-relaxed" style={{ color: PLUM }}>
-              Diskret, respektvoll und gut planbar: Wir unterstützen Sie bei Messie-Fällen,
-              Wohnungsauflösungen sowie Räumungen von Keller, Dachboden oder Haus. 
-              Sie erhalten vor Start einen transparenten Fixpreis und eine termingerechte Übergabe.
-              Keine langen Wege, keine Unklarheiten – einfach eine verlässliche Umsetzung in Ihrem Tempo.
+            <p className="mt-4 text-base md:text-lg leading-relaxed">
+              Diskret, verlässlich und transparent: Wir unterstützen Sie bei{" "}
+              <strong>Verlassenschaften</strong>, beim <strong>Nachlassankauf</strong>, der{" "}
+              <strong>Entrümpelung</strong> von Wohnung, Haus, Keller und Dachboden sowie beim{" "}
+              <strong>Ankauf von Antiquitäten</strong>. Vor Start erhalten Sie einen klaren Fixpreis
+              und eine verbindliche Terminvereinbarung – ohne Überraschungen.
             </p>
 
             <div className="mt-6 flex flex-wrap justify-center gap-3">
               <Link
-                href="/kontakt"
-                className="inline-flex items-center justify-center rounded-xl px-5 py-3 text-sm font-medium shadow-sm transition hover:opacity-95"
-                style={{ background: CORAL, color: 'white' }}
+                href="mailto:info@antiklinz.at?subject=Anfrage%20AntikLinz"
+                className="inline-flex items-center justify-center rounded-xl px-5 py-3 text-sm font-semibold shadow-sm transition hover:opacity-95"
+                style={{ background: BURGUNDY, color: "#fff" }}
               >
-                Kostenlos anfragen
+                Kostenlose Besichtigung anfragen
               </Link>
               <Link
                 href="/ueber-uns"
                 className="inline-flex items-center justify-center rounded-xl px-5 py-3 text-sm font-medium border transition"
-                style={{ borderColor: MINT, color: TEAL }}
+                style={{ borderColor: GOLD, color: GRAPHITE, background: "#fff" }}
               >
                 Mehr über uns
               </Link>
@@ -73,24 +76,24 @@ export default function LeistungenPage() {
       {/* CONTENT WRAPPER */}
       <section className="mx-auto w-full max-w-[1150px] px-4 pb-16 md:pb-20">
         {/* тонкая разделительная линия в нашей палитре */}
-        <div className="my-8 h-px w-full" style={{ background: SAND }} />
+        <div className="my-8 h-px w-full" style={{ background: `${GOLD}55` }} />
 
         {/* Сетка услуг из твоего компонента */}
         <Leistungen />
 
-        {/* дополнительный SEO-текст (нейтрально, без запрещённых слов) */}
-        <div className="mt-12 max-w-3xl mx-auto text-base md:text-lg leading-relaxed" style={{ color: PLUM }}>
+        {/* дополнительный SEO-текст (уникальный) */}
+        <div className="mt-12 max-w-3xl mx-auto text-base md:text-lg leading-relaxed">
           <p className="mb-6">
-            Jede Räumung hat ihre eigene Geschichte. Damit Sie sich gut aufgehoben fühlen,
-            arbeiten wir ruhig und strukturiert, geben klare Zeitfenster und sind 
-            auf Wunsch auch mit Schlüsselübernahme für Sie da. Unser Ziel: eine saubere Übergabe
-            ohne Stress – und das gute Gefühl, dass alles verlässlich erledigt wurde.
+            Jede Sammlung und jeder Haushalt hat eine eigene Geschichte. Damit der Prozess für Sie
+            ruhig und überschaubar bleibt, arbeiten wir strukturiert, stimmen Zeitfenster klar ab
+            und übernehmen auf Wunsch die Schlüsselübergabe. Unser Anspruch: eine saubere,
+            termintreue Übergabe – und das sichere Gefühl, dass alles zuverlässig erledigt wurde.
           </p>
           <p>
-            Ob Messie Hilfe, Wohnungsauflösung oder das Räumen einzelner Bereiche wie Keller
-            und Dachboden: In Linz und Umgebung sind wir schnell verfügbar, stimmen uns eng mit Ihnen ab
-            und halten die vereinbarten Termine ein. So bleibt der Prozess übersichtlich und Sie
-            behalten jederzeit die Kontrolle über alle Schritte.
+            Ob vollständige Räumung, gezielte Teilbereiche oder der <strong>Verkauf von Antiquitäten</strong>:
+            In Linz und Umgebung sind wir kurzfristig verfügbar, halten Absprachen ein und bleiben
+            während des gesamten Ablaufs Ihr direkter Ansprechpartner. So behalten Sie jederzeit die
+            Kontrolle über alle Schritte – transparent und ohne versteckte Kosten.
           </p>
         </div>
       </section>
@@ -100,20 +103,20 @@ export default function LeistungenPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'BreadcrumbList',
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
             itemListElement: [
               {
-                '@type': 'ListItem',
+                "@type": "ListItem",
                 position: 1,
-                name: 'Startseite',
-                item: 'https://messielinz.at/',
+                name: "Startseite",
+                item: "https://antiklinz.at/",
               },
               {
-                '@type': 'ListItem',
+                "@type": "ListItem",
                 position: 2,
-                name: 'Leistungen',
-                item: 'https://messielinz.at/leistungen',
+                name: "Leistungen",
+                item: "https://antiklinz.at/leistungen",
               },
             ],
           }),

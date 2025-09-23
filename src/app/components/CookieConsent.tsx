@@ -5,6 +5,13 @@ import { useEffect, useState } from 'react';
 const COOKIE_NAME = 'zv_cc'; // zenvara cookie consent
 const ONE_YEAR = 60 * 60 * 24 * 365;
 
+// Brand (AntikLinz)
+const BURGUNDY = '#7B2E2E';
+const GOLD     = '#C2A14D';
+const GREEN    = '#2E4B3C';
+const BASE     = '#F7F3ED';
+const GRAPHITE = '#2B2B2B';
+
 function hasConsentCookie() {
   if (typeof document === 'undefined') return true;
   return document.cookie.split('; ').some((c) => c.startsWith(`${COOKIE_NAME}=`));
@@ -40,27 +47,42 @@ export default function CookieConsent() {
       className="fixed inset-x-0 bottom-0 z-[70] px-4 pb-[calc(env(safe-area-inset-bottom)+1rem)]"
     >
       <div className="mx-auto w-full max-w-[1200px]">
-        <div className="rounded-2xl border border-slate-200 bg-white/95 backdrop-blur p-4 md:p-5 shadow-xl ring-1 ring-black/5">
+        <div
+          className="rounded-2xl shadow-xl backdrop-blur p-4 md:p-5 ring-1"
+          style={{
+            background: 'rgba(255,255,255,0.92)',
+            border: `1px solid ${GOLD}55`,
+            color: GRAPHITE,
+            boxShadow: '0 10px 30px rgba(0,0,0,.08)',
+          }}
+        >
           <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
             {/* Текст */}
-            <div className="text-sm text-slate-700 md:pr-6">
-              <strong className="text-slate-900">Cookies:</strong>{' '}
-              Wir verwenden ausschließlich technisch notwendige Cookies,
-              um grundlegende Funktionen dieser Website zu ermöglichen.
-              Details finden Sie in unserer{' '}
+            <div className="text-sm md:pr-6">
+              <strong style={{ color: BURGUNDY }}>Cookies:</strong>{' '}
+              Wir verwenden ausschließlich technisch notwendige Cookies, damit
+              grundlegende Funktionen dieser Website zuverlässig arbeiten
+              (z.&nbsp;B. Navigation, Formular-Handling). Mehr Informationen finden Sie in unserer{' '}
               <a
                 href="/impressum"
-                className="font-medium text-[#1F3B4D] underline underline-offset-2 hover:no-underline"
+                className="font-medium underline underline-offset-2 hover:opacity-90"
+                style={{ color: GREEN, textDecorationColor: GOLD }}
               >
                 Datenschutzerklärung
-              </a>.
+              </a>
+              .
             </div>
 
             {/* Кнопки */}
             <div className="flex items-center gap-2">
               <a
                 href="/impressum"
-                className="inline-flex items-center justify-center rounded-xl px-3.5 py-2 text-sm font-semibold text-[#1F3B4D] ring-1 ring-slate-300 hover:bg-slate-50 whitespace-nowrap shrink-0 leading-none"
+                className="inline-flex items-center justify-center rounded-xl px-3.5 py-2 text-sm font-semibold whitespace-nowrap shrink-0 leading-none transition"
+                style={{
+                  color: GRAPHITE,
+                  background: '#fff',
+                  border: `1px solid ${GOLD}66`,
+                }}
               >
                 Mehr erfahren
               </a>
@@ -68,9 +90,10 @@ export default function CookieConsent() {
               <button
                 type="button"
                 onClick={accept}
-                className="inline-flex items-center justify-center rounded-xl px-4 py-2 text-sm font-semibold text-white bg-[#1F3B4D] hover:opacity-90"
+                className="inline-flex items-center justify-center rounded-xl px-4 py-2 text-sm font-semibold transition hover:opacity-95"
+                style={{ background: BURGUNDY, color: '#fff' }}
               >
-                Verstanden
+                Einverstanden
               </button>
             </div>
           </div>

@@ -3,12 +3,15 @@
 import { useMemo } from 'react';
 import { usePathname } from 'next/navigation';
 
-const PLUM = '#4A235A';
-const MINT  = '#A8E6CF';
-const TEAL  = '#006D77';
+// AntikLinz palette
+const BURGUNDY = '#7B2E2E';
+const GOLD     = '#C2A14D';
+const GREEN    = '#2E4B3C';
+const BASE     = '#F7F3ED';
+const GRAPHITE = '#2B2B2B';
 
 type Props = {
-  siteUrl: string;          // <- ОБЯЗАТЕЛЬНО ПРИХОДИТ ИЗ ФУТЕРА
+  siteUrl: string;          // обязателен (прилетает из футера)
   title?: string;
   className?: string;
   small?: boolean;
@@ -25,7 +28,8 @@ export default function ShareButtons({ siteUrl, title, className, small = true }
       pageUrl,
       encodedUrl: encodeURIComponent(pageUrl),
       encodedText: encodeURIComponent(
-        title || 'Messie & Entrümpelung in Linz — diskret, respektvoll, ergebnisorientiert.'
+        title ||
+          'AntikLinz – Verlassenschaften, Nachlassankauf & Entrümpelung in Linz.'
       ),
     };
   }, [siteUrl, pathname, title]);
@@ -37,9 +41,14 @@ export default function ShareButtons({ siteUrl, title, className, small = true }
   ];
 
   return (
-    <div className={className} aria-label="Seite teilen" style={{ color: PLUM }}>
+    <div
+      className={className}
+      aria-label="Seite teilen"
+      style={{ color: GRAPHITE }}
+    >
       <div className={`flex flex-wrap items-center gap-2 ${small ? 'text-xs' : 'text-sm'}`}>
         <span className="opacity-80">Teilen:</span>
+
         {links.map((l) => (
           <a
             key={l.name}
@@ -47,15 +56,19 @@ export default function ShareButtons({ siteUrl, title, className, small = true }
             target="_blank"
             rel="noopener noreferrer"
             title={l.label}
-            className="inline-flex items-center rounded-lg px-3 py-1.5 transition"
-            style={{ border: `1px solid ${MINT}`, color: TEAL, background: 'white' }}
+            className="inline-flex items-center rounded-lg px-3 py-1.5 transition hover:opacity-90"
+            style={{
+              border: `1px solid ${GOLD}`,
+              color: BURGUNDY,
+              background: '#fff',
+            }}
           >
             {l.name}
           </a>
         ))}
-      </div>
 
-  
+        
+      </div>
     </div>
   );
 }
