@@ -191,7 +191,7 @@ export default function Footer() {
         className={circle}
         style={bgStyle}
       >
-        <Image src="/images/whatsapp.svg" alt="WhatsApp" width={34} height={34} />
+        <Image src="/images/whatsapp.png" alt="WhatsApp" width={30} height={30} />
       </a>
 
       {/* E-Mail */}
