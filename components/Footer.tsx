@@ -7,11 +7,24 @@ import ShareButtons from "./ShareButtons";
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://antiklinz.at";
 
 // Brand palette (AntikLinz)
-const BURGUNDY = "#7B2E2E";
-const GOLD     = "#C2A14D";
-const GREEN    = "#2E4B3C";
-const BASE     = "#F7F3ED";
-const GRAPHITE = "#2B2B2B";
+
+  const BURGUNDY = "#7B2E2E";
+  const GOLD     = "#C2A14D";
+  const GREEN    = "#2E4B3C";
+  const BASE     = "#F7F3ED";
+  const GRAPHITE = "#2B2B2B";
+
+  const EMAIL = "info@antiklinz.at";
+  const PHONE = "+43 676 720 26 23";
+
+  const circle =
+    "w-14 h-14 rounded-full border shadow-lg flex items-center justify-center hover:scale-110 active:scale-95 transition will-change-transform";
+
+  const bgStyle: React.CSSProperties = {
+    background: `linear-gradient(145deg, ${BASE} 10%, ${GOLD} 90%)`,
+    borderColor: `white`,
+    boxShadow: `0 8px 20px -6px ${GRAPHITE}55`,
+  };
 
 const CONTAINER = "mx-auto w-full max-w-[1150px] px-4";
 
@@ -152,6 +165,48 @@ export default function Footer() {
           </div>
         </div>
       </div>
+
+
+
+              <div
+      className="fixed z-[9999] right-4 bottom-24 md:right-8 md:bottom-28 flex flex-col gap-3"
+      aria-label="Schnellkontakte"
+    >
+      {/* Телефон */}
+      <a
+        href="tel:+436767202623"
+        aria-label="Anrufen"
+        className={circle}
+        style={bgStyle}
+      >
+        <Image src="/images/phone.svg" alt="Call" width={28} height={28} />
+      </a>
+
+      {/* WhatsApp */}
+      <a
+        href="https://wa.me/436767202623"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Auf WhatsApp schreiben"
+        className={circle}
+        style={bgStyle}
+      >
+        <Image src="/images/whatsapp.svg" alt="WhatsApp" width={34} height={34} />
+      </a>
+
+      {/* E-Mail */}
+      <a
+        href={`mailto:${EMAIL}`}
+        aria-label="E-Mail schreiben"
+        className={circle}
+        style={bgStyle}
+      >
+        <Image src="/images/mailgun.svg" alt="Email" width={25} height={25} />
+      </a>
+    </div>
+
+
+
     </footer>
   );
 }

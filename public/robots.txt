@@ -1,5 +1,5 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://messielinz.at/sitemap.xml
+Sitemap: https://antiklinz.at/sitemap.xml
 

@@ -1,6 +1,6 @@
-// app/page.tsx
-"use client";
 
+
+import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -12,6 +12,12 @@ const BRAND = {
   graphite: "#2B2B2B", // текст
   email: "info@antiklinz.at",
   phone: "+43 676 720 26 23",
+};
+
+export const metadata: Metadata = {
+  title: "AntikLinz – Verlassenschaften, Nachlassankauf & Entrümpelung in Linz",
+  description:
+    "AntikLinz – Verlassenschaften, Nachlassankauf & Entrümpelung in Linz. Seriöser Ankauf von Antiquitäten sowie diskrete Räumungen und Verlassenschaften in Linz...",
 };
 
 export default function Home() {
