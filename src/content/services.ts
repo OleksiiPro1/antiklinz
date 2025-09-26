@@ -12,7 +12,7 @@ export type Service = {
 
 export const services: Service[] = [
   {
-    slug: 'ankauf-antiquitaeten-moebel-linz',
+    slug: 'ankauf-antiquitaten-mobel-in-linz',
     image: '/images/antiklinz-moebel-hero.webp',
     width: 1200,
     height: 800,
@@ -22,7 +22,7 @@ export const services: Service[] = [
     excerpt: 'AntikLinz kauft antike Möbel in Linz: Biedermeier, Gründerzeit, Jugendstil oder Vintage. Kostenlose Besichtigung, faire Bewertung und schnelle Abwicklung.'
   },
   {
-    slug: 'ankauf-antiquitaeten-keramik-linz',
+    slug: 'ankauf-antiquitaten-keramik-in-linz',
     image: '/images/antiklinz-keramik-kategorien.webp',
     width: 1200,
     height: 800,
@@ -32,7 +32,7 @@ export const services: Service[] = [
     excerpt: 'Wir kaufen antike Keramik in Linz: handbemalte Teller, Vasen, Figuren und Sammlerstücke. Fachgerechte Bewertung und transparente Preise.'
   },
   {
-    slug: 'ankauf-antiquitaeten-silber-schmuck-linz',
+    slug: 'ankauf-antiquitaten-silber-schmuck-in-linz',
     image: '/images/antiklinz-silber-schmuck.webp',
     width: 1200,
     height: 800,
@@ -42,7 +42,7 @@ export const services: Service[] = [
     excerpt: 'Ankauf von Silber & Schmuck in Linz: Silberbesteck, Uhren, Ringe, Halsketten und Sammlerstücke. Sofortige Barzahlung und faire Konditionen.'
   },
   {
-    slug: 'verkauf-antike-muenzen-linz',
+    slug: 'verkauf-von-antiken-munzen-in-linz',
     image: '/images/antiklinz-muenzen2.webp',
     width: 1200,
     height: 800,
@@ -52,7 +52,7 @@ export const services: Service[] = [
     excerpt: 'Verkauf von antiken Münzen in Linz: römische, griechische, mittelalterliche und moderne Sammlermünzen. Transparente Bewertung und sichere Abwicklung.'
   },
   {
-    slug: 'porzellan-verkaufen-linz',
+    slug: 'porzellan-verkaufen-in-linz',
     image: '/images/porzellan-linz.webp',
     width: 1200,
     height: 800,
@@ -62,7 +62,7 @@ export const services: Service[] = [
     excerpt: 'Porzellan verkaufen in Linz leicht gemacht: Meissen, Augarten, Rosenthal und andere Manufakturen. Kostenlose Begutachtung und faire Preise.'
   },
   {
-    slug: 'messie-entruempelung-linz',
+    slug: 'messie-entrumpelung-in-linz',
     image: '/images/messie-arbeitsweise.webp',
     width: 1200,
     height: 800,

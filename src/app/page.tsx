@@ -3,6 +3,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
+import Leistungen from "./components/Leistungen";
 
 const BRAND = {
   burgundy: "#7B2E2E", // основной (бордовый)
@@ -141,49 +142,9 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid gap-6 md:grid-cols-3">
-            {/* Leistung 1 */}
-            <div
-              className="rounded-2xl border p-6 shadow-sm transition hover:shadow-md"
-              style={{ borderColor: BRAND.gold, background: "#fff" }}
-            >
-              <h3 className="text-lg font-semibold mb-2" style={{ color: BRAND.burgundy }}>
-                Verlassenschaften
-              </h3>
-              <p className="text-sm leading-relaxed" style={{ color: BRAND.graphite }}>
-                Wir übernehmen komplette <strong>Verlassenschaften in Linz</strong> –
-                transparent, zuverlässig und respektvoll gegenüber den Erinnerungsstücken.
-              </p>
-            </div>
-
-            {/* Leistung 2 */}
-            <div
-              className="rounded-2xl border p-6 shadow-sm transition hover:shadow-md"
-              style={{ borderColor: BRAND.gold, background: "#fff" }}
-            >
-              <h3 className="text-lg font-semibold mb-2" style={{ color: BRAND.burgundy }}>
-                Nachlassankauf
-              </h3>
-              <p className="text-sm leading-relaxed" style={{ color: BRAND.graphite }}>
-                Ankauf von <strong>Nachlässen und Antiquitäten</strong> wie Silber, Porzellan,
-                Gemälden oder Design-Objekten – sofortige Barzahlung möglich.
-              </p>
-            </div>
-
-            {/* Leistung 3 */}
-            <div
-              className="rounded-2xl border p-6 shadow-sm transition hover:shadow-md"
-              style={{ borderColor: BRAND.gold, background: "#fff" }}
-            >
-              <h3 className="text-lg font-semibold mb-2" style={{ color: BRAND.burgundy }}>
-                Entrümpelung & Räumung
-              </h3>
-              <p className="text-sm leading-relaxed" style={{ color: BRAND.graphite }}>
-                Schnelle und diskrete <strong>Entrümpelung von Wohnungen, Häusern und Kellern</strong> 
-                – fix vereinbart, termintreu und ohne versteckte Kosten.
-              </p>
-            </div>
-          </div>
+          
+            <Leistungen />
+          
         </div>
       </section>
           
