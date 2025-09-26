@@ -1,14 +1,25 @@
-// src/app/bewertungen/page.tsx
 import type { Metadata } from "next";
 import ReviewsClient from "../../components/ReviewsClient";
 
 export const metadata: Metadata = {
-  title: "Bewertungen – Antikexperte.at",
+  title: "Bewertungen – AntikLinz",
   description:
-    "Kundenstimmen & eigene Bewertung abgeben. Schnell, diskret und ohne Registrierung. Ihre Einträge werden nur lokal in Ihrem Browser gespeichert.",
+    "Echte Kundenstimmen zu AntikLinz. Lesen Sie Erfahrungen aus Linz & Oberösterreich oder senden Sie Ihre Rückmeldung per E-Mail – ohne Registrierung.",
+  robots: { index: true, follow: true },
+  openGraph: {
+    title: "Bewertungen – AntikLinz",
+    description:
+      "Kundenstimmen zu Ankauf & Räumungen in Linz. Eigene Bewertung ohne Anmeldung möglich.",
+    siteName: "AntikLinz",
+    locale: "de_AT",
+    type: "website",
+  },
+  alternates: { canonical: "https://antiklinz.at/bewertungen" },
 };
 
-const ACCENT = "#b38b5999";
+const BURGUNDY = "#7B2E2E";
+const GOLD = "#C2A14D";
+const ACCENT = `${GOLD}99`; // прозрачное золото
 
 export default function BewertungenPage() {
   return (
@@ -19,18 +30,17 @@ export default function BewertungenPage() {
           className="rounded-3xl border bg-white/80 backdrop-blur p-8 md:p-10 shadow-sm"
           style={{ borderColor: ACCENT }}
         >
-          <p className="text-sm uppercase tracking-wider text-gray-500">
-            Antikexperte.at
+          <p className="text-sm uppercase tracking-wider" style={{ color: BURGUNDY }}>
+            AntikLinz
           </p>
-          <h1 className="text-4xl md:text-5xl font-light leading-tight mt-1">
+          <h1 className="text-4xl md:text-5xl font-extrabold leading-tight mt-1" style={{ color: BURGUNDY }}>
             Bewertungen
           </h1>
-          <p className="mt-4 text-gray-700">
-            Lesen Sie ausgewählte Kundenstimmen und geben Sie bei Wunsch Ihre
-            eigene Rückmeldung ab – ganz ohne Anmeldung.{" "}
+          <p className="mt-4" style={{ color: "#2B2B2B" }}>
+            Lesen Sie ausgewählte Rückmeldungen aus Linz &amp; Oberösterreich oder schicken Sie uns
+            Ihre eigene Bewertung – ganz ohne Anmeldung.{" "}
             <strong>Hinweis:</strong> Eigene Einträge werden{" "}
-            <em>ausschließlich lokal</em> in Ihrem Browser gespeichert
-            (localStorage) und sind nur für Sie sichtbar.
+            <em>ausschließlich lokal</em> in Ihrem Browser vorbereitet (mailto) und nicht serverseitig gespeichert.
           </p>
         </div>
       </section>
@@ -39,6 +49,24 @@ export default function BewertungenPage() {
       <section className="pb-16 max-w-5xl mx-auto px-6">
         <ReviewsClient accent={ACCENT} />
       </section>
+
+      {/* Optional: AggregateRating JSON-LD */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            name: "AntikLinz",
+            url: "https://antiklinz.at",
+            aggregateRating: {
+              "@type": "AggregateRating",
+              ratingValue: "5",
+              reviewCount: "6",
+            },
+          }),
+        }}
+      />
     </>
   );
 }

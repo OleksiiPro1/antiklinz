@@ -9,6 +9,7 @@ export default function Impressum() {
 
   const html = `
 <div class="elementor-widget-container">
+ <p>UID-Nummer: ATU67972107</p>
 									<p>FN: 574684z<br>Gewerbezweig: Entrümpeln<br>Aufsichtsbehörde: Handelsgericht Wien 1030 Wien Marxergasse 1A</p>
 <h2><b>Datenschutzverordnung</b></h2>
 <h2>Einleitung und Überblick</h2>
@@ -41,7 +42,7 @@ export default function Impressum() {
 <h2>Kontaktdaten des Verantwortlichen</h2>
 <p>Sollten Sie Fragen zum Datenschutz oder zur Verarbeitung personenbezogener Daten haben, finden Sie nachfolgend die Kontaktdaten der verantwortlichen Person bzw. Stelle:</p>
 <p>Kontaktdaten:</p>
-<p>X-Trans e.U<br><span style="background-color: var(--colorLight);">Hasenleitengasse 10.10.1 Wien 1110, Austria</span></p>
+<p>X-Trans e.U.<br><span style="background-color: var(--colorLight);">Hasenleitengasse 10.10.1 Wien 1110, Austria</span></p>
 <p><span style="background-color: var(--colorLight); color: var(--colorFont);">E-Mail: info@entruempelungswien.at</span><br></p>
 <p>Telefon: +43 6767202623</p>
 <h2>Speicherdauer</h2>
@@ -1024,7 +1025,7 @@ export default function Impressum() {
           <path d="M12 3 19 7v5c0 5-3.5 9-7 9s-7-4-7-9V7l7-4z" />
           <path d="m9 12 2 2 4-4" />
         </svg>
-        <span className="font-semibold">X-Trans e.U</span>
+        <span className="font-semibold">X-Trans e.U.</span>
       </div>
 
       {/* Почта */}

@@ -72,11 +72,11 @@ export default function Home() {
 
               <div className="mt-6 flex flex-wrap items-center gap-3">
                 <Link
-                  href={`mailto:${BRAND.email}`}
+                  href="https://antiklinz.at/bewertungen"
                   className="inline-flex items-center justify-center rounded-xl px-5 py-3 text-sm font-semibold shadow-sm transition hover:opacity-95"
                   style={{ background: BRAND.burgundy, color: "#fff" }}
                 >
-                  Kostenlose Besichtigung anfragen
+                  Bewertung abgeben
                 </Link>
                 <Link
                   href={`tel:${BRAND.phone.replace(/\s/g, "")}`}
