@@ -107,12 +107,12 @@ export default function Header() {
   className=" ml-3 flex flex-col rounded-xl"
 >
   {[
-    { href: "/leistungen/ankauf", label: "Ankauf" },
-    { href: "/leistungen/verkauf", label: "Verkauf" },
-    { href: "/leistungen/verlassenschaften", label: "Verlassenschaften" },
-    { href: "/leistungen/entruempelung", label: "Entrümpelung" },
-    { href: "/leistungen/beratung", label: "Beratung" },
-    { href: "/leistungen/spezial", label: "Spezial-Service" },
+    { href: "/ankauf-antiquitaten-keramik-in-linz", label: "Antiquitäten, Keramik in Linz" },
+    { href: "/ankauf-antiquitaten-mobel-in-linz", label: "Antiquitäten & Möbel in Linz" },
+    { href: "/ankauf-antiquitaten-silber-schmuck-in-linz", label: "Silber & Schmuck in Linz" },
+    { href: "/messie-entrumpelung-in-linz", label: "Messie Entrümpelung in Linz" },
+    { href: "/porzellan-verkaufen-in-linz", label: "Porzellan verkaufen in Linz" },
+    { href: "/verkauf-von-antiken-munzen-in-linz", label: "Verkauf von antiken Münzen in Linz" },
   ].map((item) => (
     <li
       key={item.href}
@@ -238,12 +238,12 @@ export default function Header() {
   style={{ borderColor: `${GOLD}55`, background: "#fff" }}
 >
   {[
-    { href: "/leistungen/ankauf", label: "Ankauf" },
-    { href: "/leistungen/verkauf", label: "Verkauf" },
-    { href: "/leistungen/verlassenschaften", label: "Verlassenschaften" },
-    { href: "/leistungen/entruempelung", label: "Entrümpelung" },
-    { href: "/leistungen/beratung", label: "Beratung" },
-    { href: "/leistungen/spezial", label: "Spezial-Service" },
+    { href: "/ankauf-antiquitaten-keramik-in-linz", label: "Antiquitäten, Keramik in Linz" },
+    { href: "/ankauf-antiquitaten-mobel-in-linz", label: "Antiquitäten & Möbel in Linz" },
+    { href: "/ankauf-antiquitaten-silber-schmuck-in-linz", label: "Silber & Schmuck in Linz" },
+    { href: "/messie-entrumpelung-in-linz", label: "Messie Entrümpelung in Linz" },
+    { href: "/porzellan-verkaufen-in-linz", label: "Porzellan verkaufen in Linz" },
+    { href: "/verkauf-von-antiken-munzen-in-linz", label: "Verkauf von antiken Münzen in Linz" },
   ].map((item) => (
     <li
       key={item.href}

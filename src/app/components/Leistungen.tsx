@@ -6,12 +6,13 @@ type ServiceItem = {
   slug: string;
   title?: string;
   description?: string;
-  image?: string;
+  image: string;
   width?: number;
   height?: number;
   alt?: string;
   date: string;
   excerpt: string;
+  
 };
 
 // Brand palette
@@ -40,7 +41,7 @@ export default function Leistungen() {
             {/* Изображение — пока у всех одинаковое */}
             <div className="overflow-hidden rounded-t-2xl">
               <Image
-                src="/images/antiklinz-3.webp"
+                src={s.image}
                 alt={altText}
                 width={800}
                 height={600}
