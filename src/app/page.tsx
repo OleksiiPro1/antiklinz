@@ -16,9 +16,9 @@ const BRAND = {
 };
 
 export const metadata: Metadata = {
-  title: "AntikLinz – Verlassenschaften, Nachlassankauf & Entrümpelung in Linz",
+  title: "AntikLinz – Verlassenschaften, Nachlassankauf, Entrümpelung Linz",
   description:
-    "AntikLinz – Verlassenschaften, Nachlassankauf & Entrümpelung in Linz. Seriöser Ankauf von Antiquitäten sowie diskrete Räumungen und Verlassenschaften in Linz...",
+    "AntikLinz – Verlassenschaften, Nachlassankauf & Entrümpelung in Linz. Seriöser Ankauf von Antiquitäten sowie diskrete Räumungen, Verlassenschaften in Linz",
 };
 
 export default function Home() {

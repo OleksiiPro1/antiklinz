@@ -6,7 +6,7 @@ const OUT_DIR = path.resolve("out");
 const HTACCESS = path.join(OUT_DIR, ".htaccess");
 
 // укажи свой домен
-const DOMAIN = "messielinz.at";
+const DOMAIN = "antiklinz.at";
 
 // .htaccess, который положим в out/
 const CONTENT = `RewriteEngine On
